@@ -1,0 +1,16 @@
+@use '../base/variables' as v;
+@use '../../styles/abstracts/mixins' as mx;
+
+.contenedor {
+    margin: 0 auto;
+    width: min(90%, 140rem);
+    overflow: hidden;
+}
+
+.error {
+    background-color: v.$alerta;
+    color: v.$blanco;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: -3rem 0 1rem 0 !important;
+}
