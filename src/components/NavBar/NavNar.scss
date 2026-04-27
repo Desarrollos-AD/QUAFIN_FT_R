@@ -1,0 +1,77 @@
+@use '../../styles/abstracts/mixins' as mx;
+@use '../../styles/base/variables' as v;
+
+.navbar {
+    position: relative;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7rem;
+        padding: 0 2rem;
+        position: fixed;
+        top: 2.5rem;
+        left: 0;
+        right: 0;
+        width: min(95%, 140rem);
+        margin: 0 auto;
+        background-color: rgba(189, 218, 252, 0.2);
+        backdrop-filter: blur(30px);
+        border-radius: 20rem;
+        border: 1px solid rgba(255, 255, 255, .08);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    &__logo {
+        width: 4rem;
+    }
+
+    &__links {
+        display: flex;
+
+        @include mx.max-tablet-pequena {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+
+            &.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 1rem 2rem;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: v.$blanco;
+        cursor: pointer;
+
+        @include mx.max-tablet-pequena {
+            display: block;
+        }
+    }
+}

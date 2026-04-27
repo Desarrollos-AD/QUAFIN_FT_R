@@ -37,6 +37,11 @@
         @content;
     }
 }
+@mixin max-tablet-pequena {
+    @media (max-width: v.$tablet_pequena) {
+        @content;
+    }
+}
 
 @mixin tablet-pequena {
     @media (min-width: v.$tablet_pequena) {

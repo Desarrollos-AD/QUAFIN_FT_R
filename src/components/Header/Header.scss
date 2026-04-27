@@ -12,6 +12,7 @@
 .header {
     @include mx.grid(2, 2.5rem);
     align-items: center;
+    margin-top: 20rem;
 
     &__botones {
         display: flex;
@@ -20,5 +21,17 @@
 
     &__izquierda {
         color: v.$blanco;
+
+        h1,
+        h4 {
+            text-align: left;
+        }
+
+    }
+
+    &__derecha {
+        img {
+            width: 100%;
+        }
     }
 }
