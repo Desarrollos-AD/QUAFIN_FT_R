@@ -6,27 +6,44 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 90vh;
 }
 
 .header {
-    @include mx.grid(2, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 20rem;
+    margin-top: 10rem;
+
+    @include mx.tablet-pequena {
+        @include mx.grid(2, 2.5rem);
+        align-items: center;
+        margin-top: 20rem;
+
+    }
 
     &__botones {
         display: flex;
         gap: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        @include mx.telefono-pequeno {
+            flex-direction: row;
+        }
     }
 
     &__izquierda {
         color: v.$blanco;
+        margin: 4.1rem 0;
 
         h1,
         h4 {
-            text-align: left;
+            @include mx.telefono-pequeno {
+                text-align: left;
+            }
         }
-
     }
 
     &__derecha {
