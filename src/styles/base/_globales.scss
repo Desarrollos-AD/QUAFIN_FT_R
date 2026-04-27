@@ -11,9 +11,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    color: v.$negro;
     font-family: v.$font_primario;
-    background-color: v.$fondo;
 }
 
 *,
@@ -31,7 +29,6 @@ body {
 a {
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: v.$bold;
     color: v.$blanco;
     cursor: pointer;
     white-space: nowrap;
@@ -39,15 +36,4 @@ a {
 
 img {
     max-width: 100%;
-}
-
-iframe {
-    max-width: 100%;
-    width: 100%;
-}
-
-.img__degradado {
-    mask-image: linear-gradient(black 80%, transparent);
-    max-width: 80%;
-    margin-bottom: 15rem;
 }

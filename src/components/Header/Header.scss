@@ -1,0 +1,37 @@
+@use '../../styles/abstracts/mixins' as mx;
+@use '../../styles/base/variables' as v;
+
+.header__fondo {
+    background-image: url("../../assets/img/cielo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+.header {
+    @include mx.grid(2, 2.5rem);
+    align-items: center;
+    margin-top: 20rem;
+
+    &__botones {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__izquierda {
+        color: v.$blanco;
+
+        h1,
+        h4 {
+            text-align: left;
+        }
+
+    }
+
+    &__derecha {
+        img {
+            width: 100%;
+        }
+    }
+}

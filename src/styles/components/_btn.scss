@@ -1,20 +1,16 @@
 @use '../abstracts/_mixins.scss' as mx;
 @use '../base/variables' as v;
 
-.btn{
-    display: flex;
-    justify-content: flex-end;
+.btn {
+    display: flex
 }
-.btn__primario{
-    @include mx.btn(linear-gradient(to right, #00bcd4, #3b82f6));
+
+.btn__primario {
+    @include mx.btn(v.$primario);
 }
-.btn__secundario{
-    @include mx.btn(v.$secundario);
+
+.btn__secundario {
+    @include mx.btn(v.$blanco);
     color: v.$blanco;
-    border: none
-    
-}
-.btn__terciario{
-    @include mx.btn(v.$gris);
-    color: v.$blanco;
+    color: v.$negro;
 }
