@@ -3,10 +3,11 @@
 
 @mixin btn($bg_color) {
     display: inline-block;
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
     background: $bg_color;
     border-radius: v.$b_radius;
     cursor: pointer;
+    font-weight: v.$delgada;
     transition: opacity 200ms ease-out;
     &:hover {
         opacity: 0.85;
