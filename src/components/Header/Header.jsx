@@ -3,6 +3,7 @@ import "./Header.scss";
 import trabajador from "../../assets/img/img_trabajador.png";
 import NavBar from "../NavBar/NavBar";
 import Boton from "../ui/Boton/Boton";
+import WhatsApp from "../ui/WhatssApp/WhatssApp";
 
 const svgPaths = {
   formaHeader:
@@ -52,6 +53,7 @@ const Header = () => {
         </svg>
       </div>
     </header>
+
   );
 };
 
