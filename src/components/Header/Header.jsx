@@ -1,19 +1,19 @@
 import React from "react";
 import "./Header.scss";
-import persona from "../../assets/img/persona_header.png";
+import trabajador from "../../assets/img/img_trabajador.png";
 import NavBar from "../NavBar/NavBar";
 import Boton from "../ui/Boton/Boton";
+import WhatsApp from "../ui/WhatssApp/WhatssApp";
 
 const svgPaths = {
-  p238303e0:
-    "M1063.42 0H376.576C365.685 0 354.953 2.61605 345.283 7.62802L194.717 85.6712C185.047 90.6832 174.315 93.2992 163.424 93.2992H0V190H1440V93.2992H1276.58C1265.68 93.2992 1254.95 90.6832 1245.28 85.6712L1094.72 7.62802C1085.05 2.61605 1074.32 0 1063.42 0Z",
+  formaHeader:
+    "M1071.79 0H377.106C367.648 0 358.295 1.97291 349.643 5.79268L194 74.5065C185.348 78.3263 175.994 80.2992 166.537 80.2992H0V109H1440V80.2992H1280.64C1271.09 80.2992 1261.65 78.2867 1252.92 74.3928L1099.51 5.90639C1090.79 2.0125 1081.34 0 1071.79 0Z",
 };
 
 const Header = () => {
   return (
     <header className="header__fondo">
       <div className="contenedor">
-        
         <NavBar />
 
         <div className="header">
@@ -26,32 +26,34 @@ const Header = () => {
             </h4>
 
             <div className="header__botones">
-              <Boton ruta="/servicios" claseBtn="btn__primario" texto="Explora nuestros servicios" />
-              <Boton ruta="/contacto" claseBtn="btn__secundario" texto="Solicita tu crédito" />
+              <Boton
+                ruta="/servicios"
+                claseBtn="btn__primario"
+                texto="Explora nuestros servicios"
+              />
+              <Boton
+                ruta="/contacto"
+                claseBtn="btn__secundario"
+                texto="Solicita tu crédito"
+              />
             </div>
           </div>
           <div className="header__derecha">
-            <img src={persona} alt="Hombre negocios" />
+            <img src={trabajador} alt="Hombre negocios" />
           </div>
         </div>
       </div>
       <div className="recorte__fondo">
-        <div className="relative size-full">
-          <svg
-            className="absolute block inset-0 size-full"
-            fill="none"
-            preserveAspectRatio="none"
-            viewBox="0 0 1440 190"
-          >
-            <path
-              d={svgPaths.p238303e0}
-              fill="var(--fill-0, white)"
-              id="Vector 5"
-            />
-          </svg>
-        </div>
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path
+            d={svgPaths.formaHeader}
+            fill="var(--fill-0, white)"
+            id="Vector 5"
+          />
+        </svg>
       </div>
     </header>
+
   );
 };
 
