@@ -4,46 +4,37 @@ h1,
 h2 {
     margin: 0 0 2.5rem 0;
     text-align: center;
-}
-
-h3 {
-    margin: 2.5rem 0;
-    text-align: center;
-}
-
-h4 {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-h1,
-h2,
-h3 {
     font-weight: v.$bold;
-}
-
-h4 {
-    font-weight: v.$delgada;
 }
 
 h1 {
     font-size: clamp(3.5rem, 4vw, 6.5rem);
+    color: v.$blanco;
 }
 
 h2 {
-    font-size: clamp(3.5rem, 4vw, 5.5rem);
+    font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
 h3 {
-    font-size: clamp(2.2rem, 2.4vw, 2.5rem);
+    font-size: clamp(2rem, 2.3vw, 2.2rem);
+    margin: 2.5rem 0;
+    font-weight: v.$regular;
+    text-align: center;
 }
 
 h4 {
     font-size: clamp(1.9rem, 2vw, 2.2rem);
+    margin: 2rem 0;
+    text-align: center;
+    font-weight: v.$delgada;
 }
 
 p {
-    font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+    font-size: clamp(1.4rem, 1.8vw, 1.6rem);
+    color: v.$gris;
+    font-weight: v.$delgada;
+    text-align: justify;
 }
 
 ul {
@@ -67,4 +58,9 @@ a {
 
 button {
     font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+li {
+    font-size: clamp(1.5rem, 1.8vw, 1.65rem);
+    line-height: 1.5;
 }

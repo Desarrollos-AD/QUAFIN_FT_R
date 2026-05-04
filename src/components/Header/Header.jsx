@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import persona from "../../assets/img/persona_header.png";
 import NavBar from "../NavBar/NavBar";
+import Boton from "../ui/Boton/Boton";
 
 const svgPaths = {
   p238303e0:
@@ -25,12 +26,8 @@ const Header = () => {
             </h4>
 
             <div className="header__botones">
-              <a href="/servicios" className="btn__primario">
-                Explora nuestros servicios
-              </a>
-              <a href="/contacto" className="btn__secundario">
-                Solicita tu crédito
-              </a>
+              <Boton ruta="/servicios" claseBtn="btn__primario" texto="Explora nuestros servicios" />
+              <Boton ruta="/contacto" claseBtn="btn__secundario" texto="Solicita tu crédito" />
             </div>
           </div>
           <div className="header__derecha">

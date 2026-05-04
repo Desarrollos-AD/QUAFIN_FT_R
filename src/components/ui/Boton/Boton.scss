@@ -1,5 +1,5 @@
-@use '../abstracts/_mixins.scss' as mx;
-@use '../base/variables' as v;
+@use '../../../styles/base/variables' as v;
+@use '../../../styles/abstracts/mixins' as mx;
 
 .btn {
     display: flex
