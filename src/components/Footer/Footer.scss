@@ -16,7 +16,12 @@ footer {
         margin: auto;
         align-items: center;
         color: v.$secundario-oscuro;
-        width: 82.5%;
+        width: 90%;
+        margin:40rem 0;
+
+        @include m.tablet-pequena {
+            margin: 0;
+        }
 
         h5 {
             font-size: 25rem;
@@ -26,10 +31,23 @@ footer {
 
     &__navbar {
         position: relative;
-        @include m.grid(5, 2.5rem);
+        @include m.grid(1, 2.5rem);
+
+        @include m.tablet-pequena {
+            @include m.grid(5, 2.5rem);
+        }
 
         &--links {
-            margin-top: 2.5rem;
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            // @include m.telefono-pequeno {
+            //     margin-top: 2.5rem;
+            // }
         }
 
         &--title {
@@ -42,7 +60,12 @@ footer {
         }
 
         &--link {
-            margin: 1rem 0;
+            margin: 0 auto;
+
+            // @include m.telefono-pequeno {
+            //     margin: 1rem 0;
+            //     margin-top: 2.5rem;
+            // }
 
             a {
                 font-size: clamp(1.4rem, 1.8vw, 1.6rem);
@@ -79,7 +102,6 @@ footer {
         p,
         a {
             font-size: clamp(1.2rem, 1.6vw, 1.4rem);
-
         }
 
         p {
@@ -90,6 +112,5 @@ footer {
                 text-align: center;
             }
         }
-
     }
 }
