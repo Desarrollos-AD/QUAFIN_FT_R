@@ -16,16 +16,20 @@ footer {
         margin: auto;
         align-items: center;
         color: v.$secundario-oscuro;
-        // width: 90%;
         margin:40rem 0;
-
+        overflow: hidden;
+        max-width: 100%;
+        
         @include m.tablet-pequena {
             margin: 0;
+            width: 90%;
         }
 
         h5 {
             font-size: 25rem;
             letter-spacing: 1rem;
+            text-align: center;
+            overflow: hidden;
         }
     }
 
