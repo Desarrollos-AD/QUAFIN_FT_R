@@ -9,6 +9,7 @@
     cursor: pointer;
     font-weight: v.$delgada;
     transition: opacity 200ms ease-out;
+
     &:hover {
         opacity: 0.85;
     }
@@ -37,6 +38,7 @@
         @content;
     }
 }
+
 @mixin max-tablet-pequena {
     @media (max-width: v.$tablet_pequena) {
         @content;

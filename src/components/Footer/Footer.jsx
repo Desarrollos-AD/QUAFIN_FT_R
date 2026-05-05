@@ -134,7 +134,7 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="separador__linea"></div>
+          <div className="separadorLinea__positivo"></div>
 
           <div className="footer__leyenda">
             <p>

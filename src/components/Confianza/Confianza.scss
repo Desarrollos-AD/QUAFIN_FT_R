@@ -1,0 +1,235 @@
+@use '../../styles/base/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
+
+.confianza {
+    margin: 5rem 0;
+
+    &__cards {
+        @include m.grid(2, 2.5rem);
+        margin: 5rem 0;
+
+        &--atencion,
+        &--tipos,
+        &--icono {
+            border-radius: v.$b_radius;
+            padding: 2.5rem;
+
+        }
+
+        &--atencion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: v.$azul;
+            grid-column: 1/2;
+            grid-row: 1/3;
+
+            .chat {
+                display: flex;
+
+                &__chat1,
+                &__chat2 {
+                    margin: 0 2rem;
+                    width: 6rem;
+                    height: 6rem;
+                    background-color: v.$blanco;
+                    border-radius: 50%;
+                    position: relative;
+                }
+
+                &__chat2 {
+                    margin: 0 2rem;
+
+                    &::after {
+                        position: absolute;
+                        content: ' ';
+                        width: 3rem;
+                        height: 3rem;
+                        margin: -1rem;
+                        background-color: v.$blanco;
+                        border-radius: 50%;
+                        display: block;
+                        bottom: 0;
+                    }
+                }
+
+                &__chat1 {
+                    margin: 25rem 2rem 0 2rem;
+
+                    &::after {
+                        position: absolute;
+                        content: ' ';
+                        width: 3rem;
+                        height: 3rem;
+                        margin: -1rem;
+                        background-color: v.$blanco;
+                        border-radius: 50%;
+                        display: block;
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+
+            .burbuja {
+                margin: 2rem 0;
+                height: 30rem;
+                background-color: v.$blanco;
+                border-radius: v.$b_radius;
+                width: 40rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .chat1,
+                .chat2,
+                .simulacion__btn {
+                    max-width: 80%;
+                    margin: 1rem auto;
+                }
+
+                .chat1,
+                .chat2 {
+                    border-radius: 1rem;
+                    border: 1px solid #dddddd;
+                    height: 8rem;
+                    width: 80%;
+                    padding: 1rem 2rem;
+                }
+
+                .chat1 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+
+                    .simulacion__texto {
+                        width: 4rem;
+                        height: .5rem;
+                        background-color: v.$negro;
+
+                        &:nth-child(1) {
+                            width: 7rem;
+                        }
+
+                        &:nth-child(2) {
+                            width: 2rem;
+                        }
+
+                        &:nth-child(3) {
+                            width: 6rem;
+                        }
+
+                        &:nth-child(4) {
+                            width: 6rem;
+                        }
+
+                        &:nth-child(5) {
+                            width: 2rem;
+                        }
+
+                        &:nth-child(6) {
+                            width: 4rem;
+                        }
+
+                        &:nth-child(7) {
+                            width: 5rem;
+                        }
+
+                        &:nth-child(8) {
+                            width: 2rem;
+                        }
+
+                        &:nth-child(9) {
+                            width: 5rem;
+                        }
+
+                        &:nth-child(10) {
+                            width: 7rem;
+                        }
+                    }
+                }
+
+                .chat2 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    max-width: 80%;
+
+                    .simulacion__texto {
+                        width: 4rem;
+                        height: .5rem;
+                        background-color: v.$negro;
+
+                        &:nth-child(1) {
+                            width: 7rem;
+                        }
+
+                        &:nth-child(2) {
+                            width: 5rem;
+                        }
+
+                        &:nth-child(3) {
+                            width: 2rem;
+                        }
+
+                        &:nth-child(4) {
+                            width: 6rem;
+                        }
+
+                        &:nth-child(5) {
+                            width: 3rem;
+                        }
+
+                        &:nth-child(6) {
+                            width: 6rem;
+                        }
+
+                        &:nth-child(7) {
+                            width: 4rem;
+                        }
+                    }
+                }
+
+                .simulacion__btn {
+                    background-color: v.$primario;
+                    display: flex;
+                    width: 90%;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1.5rem;
+                    border-radius: 1rem;
+
+                    p {
+                        color: v.$blanco;
+                        font-weight: v.$bold;
+                    }
+
+                }
+            }
+
+            .contenido{
+                margin: 3rem 2.5rem;
+            }
+        }
+
+        &--tipos {
+            background-color: v.$sombra;
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        h4 {
+            color: v.$negro;
+            font-size: clamp(2rem, 2.4vw, 2.2rem);
+        }
+
+        &--icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    }
+}
