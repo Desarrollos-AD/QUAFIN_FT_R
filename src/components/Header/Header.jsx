@@ -43,6 +43,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      
       <div className="recorte__fondo">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
           <path
@@ -53,7 +54,6 @@ const Header = () => {
         </svg>
       </div>
     </header>
-
   );
 };
 
