@@ -2,6 +2,7 @@ import React from "react";
 import CabeceraSection from "../ui/CabeceraSection/CabeceraSection";
 import Boton from "../ui/Boton/Boton";
 import "./Productos.scss";
+import { motion } from "framer-motion";
 
 const prod = [
   {
@@ -50,85 +51,131 @@ const prod = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
+const stagger = {
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const Productos = () => {
   return (
     <section className="contenedor">
-      <CabeceraSection
-        titulo="Productos"
-        subtitulo="¿Qué necesita financiar?"
-        descripcion="Tenemos el crédito para ti, ya seas empleado o dueño de un negocio."
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <CabeceraSection
+          titulo="Productos"
+          subtitulo="¿Qué necesita financiar?"
+          descripcion="Tenemos el crédito para ti, ya seas empleado o dueño de un negocio."
+        />
+      </motion.div>
 
-      <div className="productos">
-        {prod.map((producto) => (
-          <div className="card" key={producto.id}>
+      <motion.div
+        className="productos"
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        {prod.map((producto, index) => (
+          <motion.div
+            className="card"
+            key={index}
+            variants={fadeUp}
+            whileHover={{
+              y: -10,
+              scale: 1.02,
+              transition: { type: "spring", stiffness: 200 },
+            }}
+          >
             <div className="card__header">
               <div className="card__header--icono"></div>
-              <p className="card__header--finalidad btn__primario">
+
+              <motion.p
+                className="card__header--finalidad btn__primario"
+                whileHover={{ scale: 1.05 }}
+              >
                 {producto.tipoProducto}
-              </p>
+              </motion.p>
             </div>
 
             <div className="card__contenido">
-              <h2>{producto.nombreProducto}</h2>
-              <p>{producto.descripcion}</p>
+              <motion.h2 variants={fadeUp}>{producto.nombreProducto}</motion.h2>
 
-              <div className="card__contenido--monto">
+              <motion.p variants={fadeUp}>{producto.descripcion}</motion.p>
+
+              <motion.div className="card__contenido--monto" variants={fadeUp}>
                 <p>Monto disponible</p>
                 <h2>
                   ${producto.montoMinimo} - ${producto.montoMaximo}
                 </h2>
-              </div>
-              <div className="separadorLinea__negativo"></div>
-
-              <div className="card__caracteristicas">
-                <div className="card__caracteristicas--item">
-                  <p>Plazo</p>
-                  <p>{producto.plazo}</p>
-                </div>
-                <div className="card__caracteristicas--item">
-                  <p>Pago</p>
-                  <p>{producto.pago}</p>
-                </div>
-                <div className="card__caracteristicas--item">
-                  <p>Tasa de interés</p>
-                  <p>{producto.tasa}</p>
-                </div>
-                <div className="card__caracteristicas--item">
-                  <p>Destino</p>
-                  <p>{producto.destino}</p>
-                </div>
-                <div className="card__caracteristicas--item">
-                  <p>Aval o garantía</p>
-                  <p>{producto.garantia}</p>
-                </div>
-                <div className="card__caracteristicas--item">
-                  <p>Cobertura</p>
-                  <p>{producto.cobertura}</p>
-                </div>
-              </div>
+              </motion.div>
 
               <div className="separadorLinea__negativo"></div>
 
-              <div className="card__requisitos">
+              <motion.div className="card__caracteristicas" variants={stagger}>
+                {[
+                  ["Plazo", producto.plazo],
+                  ["Pago", producto.pago],
+                  ["Tasa de interés", producto.tasa],
+                  ["Destino", producto.destino],
+                  ["Aval o garantía", producto.garantia],
+                  ["Cobertura", producto.cobertura],
+                ].map(([label, value], i) => (
+                  <motion.div
+                    key={i}
+                    className="card__caracteristicas--item"
+                    variants={fadeUp}
+                    whileHover={{ x: 5 }}
+                  >
+                    <p>{label}</p>
+                    <p>{value}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              <div className="separadorLinea__negativo"></div>
+
+              <motion.div className="card__requisitos" variants={fadeUp}>
                 <h5>Requisitos Principales</h5>
+
                 <ul>
                   {producto.requisitos.map((requisito, i) => (
-                    <li key={i}>
-                      <span> {requisito}</span>
-                    </li>
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <span>{requisito}</span>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              <div className="importante">
+              <motion.div className="importante" variants={fadeUp}>
                 <p>Importante:</p>
                 <p className="importante__mensaje">{producto.importante}</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
