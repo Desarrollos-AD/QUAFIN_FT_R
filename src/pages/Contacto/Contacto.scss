@@ -1,0 +1,83 @@
+@use "../../styles/base/variables" as v;
+@use "../../styles/abstracts/" as m;
+
+.cards {
+    margin: 5rem 0;
+    display: flex;
+    gap: 2.5rem;
+
+    &__card {
+        border: 1px solid v.$azul;
+        border-radius: v.$b_radius;
+        padding: 2rem 3rem;
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+
+        &--icono {
+            width: 5rem;
+            height: 5rem;
+            border: 1px solid v.$azul;
+            border-radius: 50%;
+
+        }
+
+        &--informacion {
+            flex: 1;
+
+            p {
+                color: v.$terciario;
+                font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+            }
+        }
+    }
+}
+
+.ubicacion {
+    padding: 5rem;
+    @include m.grid(1, 2.5rem);
+    gap: 2.5rem;
+    align-items: center;
+    border-radius: v.$b_radius;
+    background-color: v.$primario;
+
+    &__formulario,
+    &__mapa {
+
+        iframe {
+            border-radius: v.$b_radius;
+            border: none;
+
+        }
+    }
+
+    &__formulario {
+        padding: 2.5rem;
+        background-color: #ffffffde;
+        border-radius: v.$b_radius;
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .form{
+    }
+
+    &__mapa {
+        border: none;
+    }
+
+    &__informacion {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        h5 {
+            font-weight: v.$bold;
+        }
+
+        p,
+        h5 {
+            color: v.$blanco;
+        }
+    }
+}
