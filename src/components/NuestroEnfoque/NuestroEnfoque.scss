@@ -28,10 +28,11 @@
         display: flex;
         gap: 2.5rem;
         flex: 1;
+        max-width: 100%;
 
         img {
             border-radius: v.$b_radius;
-            width: 100%;
+            width: 30%;
             height: 400px;
             object-fit: cover;
             object-position: center;

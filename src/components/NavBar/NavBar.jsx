@@ -3,6 +3,7 @@ import "./NavBar.scss";
 import logo from "../../assets/logo.svg";
 import { useState } from "react";
 import Boton from "../ui/Boton/Boton";
+import UNE from "/public/UNE.pdf";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ const NavBar = () => {
           <Link to="/productos-financieros">Productos Financieros</Link>
           <Link to="/educacion-financiera">Educación Financiera</Link>
           <Link to="/sobre-quafin">Sobre Quafin</Link>
-          <Link to="/sobre-quafin">UNE</Link>
+          <a href={UNE} target="_blank">UNE</a>
           <Link to="/contacto" className="btn__primario">
             Contacto
           </Link>

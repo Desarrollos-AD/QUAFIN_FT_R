@@ -1,0 +1,191 @@
+@use "../../styles/base/variables" as v;
+@use "../../styles/abstracts/mixins" as m;
+
+.quienesSomos {
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+
+    @include m.tablet-grande {
+        flex-direction: row;
+    }
+
+    .imagenes {
+        flex: 1;
+        @include m.grid(2, 1.5rem);
+        align-items: end;
+
+        &__secundarias {
+            img {
+                margin-top: 1rem;
+            }
+        }
+
+        img {
+            border-radius: 2rem;
+        }
+    }
+}
+
+.quines {
+    flex: 1;
+
+    &__card {
+        display: flex;
+        gap: 2.5rem;
+        margin: 3rem;
+        border-radius: 2rem;
+        padding: 4rem 2rem;
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.08),
+            0 4px 10px rgba(0, 0, 0, 0.04);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        &:last-child {
+            margin-left: 7rem;
+        }
+
+        &--descripcion {}
+
+        &--icono {}
+    }
+}
+
+.cardsValores {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 3rem 0;
+    gap: 5rem;
+
+    @include m.tablet-grande {
+        flex-direction: row;
+        margin: 10rem 0;
+
+        &:nth-child(3) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        flex: 1;
+
+        img {
+            border-radius: v.$b_radius;
+        }
+    }
+
+    &__descripcion {
+        flex: 1;
+    }
+}
+
+.nuestroObjetivos {
+    padding: 5rem 0;
+    background-color: v.$primario;
+
+    &__contenido {
+        display: flex;
+        gap: 5rem;
+        flex-direction: column;
+
+        @include m.tablet-grande {
+            flex-direction: row;
+        }
+
+        &--img {
+            flex: 1;
+
+            img {
+                border-radius: v.$b_radius;
+            }
+        }
+
+        &--descripcion {
+            flex: 1;
+
+            p {
+                margin: 3rem 0;
+            }
+
+            h2 {
+                font-size: clamp(3.8rem, 4.2vw, 4rem);
+                color: v.$blanco;
+                font-weight: v.$bold;
+            }
+        }
+    }
+}
+
+.objetivos {
+    margin: 10rem 0 2rem 0;
+}
+
+.valores {
+    @include m.grid(1, 2rem);
+    margin: 7.5rem 2.5rem;
+
+    @include m.telefono-mediano {
+        @include m.grid(2, 2rem);
+    }
+    @include m.tablet-grande {
+        @include m.grid(3, 2rem);
+    }
+
+    &__card {
+        border-radius: 2rem;
+        padding: 2rem;
+        margin-top: 5rem;
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.08),
+            0 4px 10px rgba(0, 0, 0, 0.04);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.4346 11.6664C25.9674 14.2813 25.5877 16.9997 24.3588 19.3685C23.1298 21.7373 21.126 23.6131 18.6814 24.6833C16.2368 25.7534 13.4992 25.9532 10.9251 25.2492C8.35108 24.5452 6.09617 22.98 4.53644 20.8147C2.9767 18.6494 2.20643 16.0149 2.35406 13.3504C2.50169 10.6859 3.55831 8.15252 5.34771 6.17278C7.13711 4.19304 9.55113 2.88658 12.1872 2.47127C14.8233 2.05597 17.522 2.55691 19.8335 3.89058M10.5 12.8331L14 16.3331L25.6667 4.66642' stroke='%232667FF' stroke-width='2.13838' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            color: v.$primario;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 6rem;
+            height: 6rem;
+            margin: -1rem;
+            background-color: v.$sombra;
+            border-radius: 50%;
+            display: block;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+}
