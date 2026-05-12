@@ -1,10 +1,24 @@
 @use "../../styles/base/variables" as v;
 @use "../../styles/abstracts/" as m;
 
+.contactoFondo {
+    background-color: v.$negro;
+
+    main {
+        background-color: v.$blanco;
+        border-radius: 8rem;
+    }
+}
+
 .cards {
     margin: 5rem 0;
     display: flex;
     gap: 2.5rem;
+    flex-direction: column;
+
+    @include m.telefono_grande {
+        flex-direction: row;
+    }
 
     &__card {
         border: 1px solid v.$azul;
@@ -12,18 +26,18 @@
         padding: 2rem 3rem;
         display: flex;
         gap: 2.5rem;
+        flex: 1;
         align-items: center;
 
         &--icono {
-            width: 5rem;
-            height: 5rem;
+            width: 7rem;
+            height: 7rem;
+            padding: 1rem;
             border: 1px solid v.$azul;
             border-radius: 50%;
-
         }
 
         &--informacion {
-            flex: 1;
 
             p {
                 color: v.$terciario;
@@ -35,31 +49,59 @@
 
 .ubicacion {
     padding: 5rem;
+    margin-bottom: 5rem;
     @include m.grid(1, 2.5rem);
-    gap: 2.5rem;
     align-items: center;
-    border-radius: v.$b_radius;
-    background-color: v.$primario;
+    border-radius: 6rem;
+    background: radial-gradient(circle at bottom, rgba(8, 144, 208, 1) 0%, rgb(14, 55, 97) 100%);
+
+    @include m.telefono_grande {
+        @include m.grid(2, 2.5rem);
+    }
+
 
     &__formulario,
     &__mapa {
 
         iframe {
-            border-radius: v.$b_radius;
+            border-radius: 3rem;
             border: none;
+            width: 100%;
+        }
+    }
 
+    &__informacion {
+        @include m.telefono_grande {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin-top: -15rem;
+        }
+    }
+
+    &__mapa {
+        @include m.telefono_grande {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            align-self: start;
         }
     }
 
     &__formulario {
+        grid-row: 1/2;
         padding: 2.5rem;
         background-color: #ffffffde;
-        border-radius: v.$b_radius;
-        width: 40rem;
-        height: 40rem;
-    }
+        border-radius: 3rem;
 
-    .form{
+        @include m.telefono_grande {
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+
+        h3 {
+            text-align: left;
+            font-weight: v.$bold;
+            color: v.$primario;
+        }
     }
 
     &__mapa {

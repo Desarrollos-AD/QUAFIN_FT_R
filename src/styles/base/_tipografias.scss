@@ -29,6 +29,7 @@ h4 {
     text-align: center;
     font-weight: v.$delgada;
 }
+
 h5 {
     font-size: clamp(1.8rem, 2.2vw, 2rem);
     margin: 1rem 0;
@@ -50,20 +51,21 @@ ul {
 label,
 input,
 i {
-    font-size: clamp(1.3rem, 1.4vw, 1.6rem);
+    font-size: clamp(1.4rem, 1.8vw, 1.6rem);
 }
 
-a {
+label span {
+    color: red;
+}
+
+a,
+button {
     text-decoration: none;
-    font-size: clamp(1.6rem, 2vw, 2.8rem);
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
 
     span {
         font-size: clamp(0.8rem, 1vw, 1.2rem);
     }
-}
-
-button {
-    font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 li {

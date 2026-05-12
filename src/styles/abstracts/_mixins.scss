@@ -9,7 +9,7 @@
     cursor: pointer;
     font-weight: v.$delgada;
     transition: opacity 200ms ease-out;
-
+    border: none;
     &:hover {
         opacity: 0.85;
     }

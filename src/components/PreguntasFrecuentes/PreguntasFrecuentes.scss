@@ -1,0 +1,32 @@
+@use "../../styles/base/variables" as v;
+@use "../../styles/abstracts/" as m;
+
+.preguntasFrecuentes {
+    margin: 8rem 0;
+
+    @include m.telefono-mediano {
+        margin: 15rem 0;
+    }
+
+    h2 {
+        color: v.$blanco;
+    }
+
+    p {
+        max-width: 60%;
+        text-align: center;
+        margin: auto
+    }
+}
+
+.preguntas {
+    @include m.grid(1, 0rem);
+    grid-template-columns: 1fr;
+    align-items: start !important;
+    margin-top: 10rem;
+
+    @include m.telefono-mediano {
+        @include m.grid(2, 0rem);
+        align-items: start !important;
+    }
+}

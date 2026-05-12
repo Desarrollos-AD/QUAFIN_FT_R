@@ -1,0 +1,63 @@
+@use '../../../styles/base/variables' as v;
+@use '../../../styles/abstracts/mixins' as mx;
+
+.cardItem {
+    display: flex;
+    align-items: baseline;
+    background-color: v.$blanco;
+    margin: 2rem 2rem 0 2rem;
+    padding: 2rem;
+    justify-content: space-between;
+    border-radius: v.$b_radius;
+
+    &__numero {
+        background-color: v.$gris-bajo;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            color: v.$primario;
+            font-size: clamp(1.9rem, 2.3vw, 2.1rem);
+            margin: 0;
+        }
+    }
+
+    &:hover {
+        background-color: v.$azul;
+
+        .card__numero {
+            background-color: v.$blanco;
+        }
+    }
+
+    &__pregunta {
+
+        h4 {
+            color: v.$negro;
+        }
+
+        &--descripcion {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition:
+                max-height 0.4s ease,
+                opacity 0.3s ease;
+
+            &.cardItem__pregunta--open {
+                max-height: 200px;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__icono {
+        flex-shrink: 0;
+        width: 2.5rem;
+    }
+}
