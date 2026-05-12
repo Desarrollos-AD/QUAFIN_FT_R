@@ -7,10 +7,10 @@
 
 .btn__primario {
     @include mx.btn(v.$primario);
+    color: v.$blanco;
 }
 
 .btn__secundario {
     @include mx.btn(v.$blanco);
-    color: v.$blanco;
     color: v.$negro;
 }
