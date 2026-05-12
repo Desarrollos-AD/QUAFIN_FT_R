@@ -2,7 +2,10 @@
 @use '../../styles/abstracts/mixins' as m;
 
 .confianza {
+    background-color: v.$blanco;
+    border-radius: 8rem 8rem 0 0;
     margin: 5rem 0;
+    padding: 7rem 0;
 
     &__cards {
         @include m.grid(2, 2.5rem);
@@ -208,7 +211,7 @@
                 }
             }
 
-            .contenido{
+            .contenido {
                 margin: 3rem 2.5rem;
             }
         }
