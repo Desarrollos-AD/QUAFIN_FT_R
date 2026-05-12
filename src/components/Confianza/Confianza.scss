@@ -7,8 +7,7 @@ $anchos2: 7rem, 2rem, 6rem, 6rem, 2rem, 4rem, 5rem, 2rem, 5rem, 7rem;
 .confianza {
     background-color: v.$blanco;
     border-radius: 8rem 8rem 0 0;
-    margin: 5rem 0;
-    padding: 7rem 0 4rem 0;
+    margin: 5rem 0 0 0;
 
     &__cards {
         margin: 5rem 2.5rem;
@@ -163,6 +162,8 @@ $anchos2: 7rem, 2rem, 6rem, 6rem, 2rem, 4rem, 5rem, 2rem, 5rem, 7rem;
             justify-content: center;
             grid-column: 1/2;
             grid-row: 2/3;
+            margin-bottom: 0;
+            padding-bottom: 0;
 
             @include m.tablet_grande {
                 grid-column: 2/3;

@@ -107,7 +107,7 @@ const stagger = {
 
 const Productos = () => {
   return (
-    <section className="contenedor">
+    <section className="contenedor" id="productos">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

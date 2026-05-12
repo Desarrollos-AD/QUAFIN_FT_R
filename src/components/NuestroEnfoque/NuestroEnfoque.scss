@@ -10,6 +10,11 @@
     display: flex;
     gap: 5rem;
     align-items: center;
+    flex-direction: column;
+
+    @include m.telefono-grande {
+        flex-direction: row;
+    }
 
     h2,
     h3 {
@@ -53,22 +58,32 @@
         color: v.$blanco;
 
         .btn {
-            margin-top: 5rem;
+            margin: 5rem 0 0 2rem;
         }
     }
 }
 
 .porque {
     padding: 5rem 0;
-    margin: 10rem 0 2.5rem 0;
+    margin: 5rem 0 2.5rem 0;
     backdrop-filter: blur(9px) saturate(200%);
     -webkit-backdrop-filter: blur(9px) saturate(200%);
     background: linear-gradient(50deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 50%, rgba(255, 255, 255, .5) 100%);
     border-radius: 12px;
 
+    @include m.telefono-grande {
+        margin: 10rem 0 2.5rem 0;
+    }
+
     &__contenedor {
         display: flex;
         gap: 5rem;
+
+        flex-direction: column;
+
+        @include m.telefono-grande {
+            flex-direction: row;
+        }
 
         &--descripcion {
             flex: 1;
@@ -76,7 +91,9 @@
         }
 
         &--tags {
-            margin-top: 10rem;
+            @include m.telefono-grande {
+                margin-top: 10rem;
+            }
 
             .tags {
                 display: flex;
@@ -84,6 +101,11 @@
                 margin: 2.5rem 0;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
+
+                @include m.telefono-grande {
+                    flex-direction: row;
+                }
             }
 
             .tag {
@@ -97,7 +119,6 @@
                     display: inline-block;
                 }
             }
-
         }
 
         &--img {

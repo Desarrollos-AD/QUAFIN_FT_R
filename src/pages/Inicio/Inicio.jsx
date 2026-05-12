@@ -12,11 +12,10 @@ const Inicio = () => {
       <main>
         <Header />
         <WhatsApp />
-
-        <Productos></Productos>
+        <Productos />
       </main>
-      <NuestroEnfoque />
 
+      <NuestroEnfoque />
       <Confianza />
     </>
   );

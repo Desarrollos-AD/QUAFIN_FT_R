@@ -11,6 +11,7 @@ import junta from "../../assets/img/junta.jpg";
 import imgVision from "../../assets/img/imgVision.jpg";
 import imgMision from "../../assets/img/imgMision.jpg";
 import imgCierreNegocio from "../../assets/img/cierreNegocio.jpg";
+import { motion } from "framer-motion";
 
 const quienesSomos = [
   {
@@ -128,26 +129,60 @@ const valores = [
 ];
 
 const SobreQuafin = () => {
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 80,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
   return (
     <>
       <main>
         <FondoHeader
           imgFondo={headerImg}
-          titulo={"Sobre  Quafin"}
-          subtitulo={
-            "En Quafin ofrecemos servicios financieros orientados a impulsar el crecimiento de personas y empresas, incluyendo créditos de nómina y financiamiento empresarial, siempre bajo principios de responsabilidad, transparencia y disciplina financiera."
-          }
+          titulo={"Sobre Quafin"}
+          subtitulo={"En Quafin ofrecemos servicios financieros orientados..."}
           ruta={"/sobre-Quafin"}
           claseBtn={"btn__primario"}
           texto={"Contáctenos"}
-        ></FondoHeader>
+        />
 
-        <CabeceraSection titulo="Conócenos" />
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <CabeceraSection titulo="Conócenos" />
+        </motion.div>
 
         <section className="contenedor">
           <div className="quienesSomos">
-            <div className="quines">
-              <h2>¿Quiénes somos? </h2>
+            <motion.div
+              className="quines"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <h2>¿Quiénes somos?</h2>
+
               <p>
                 En Quafin somos una Sociedad Financiera de Objeto Múltiple,
                 Entidad No Regulada (SOFOM, E.N.R.), nos especializamos en
@@ -155,45 +190,108 @@ const SobreQuafin = () => {
                 atender las necesidades de empresas y trabajadores.
               </p>
 
-              {quienesSomos.map((info) => (
-                <div className="quines__card">
-                  <div className="quines__card--icono">{info.icono}</div>
-                  <div className="quines__card--descripcion">
-                    <p>{info.descripcion}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              <motion.div
+                className="quines__cards"
+                variants={stagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {quienesSomos.map((info) => (
+                  <motion.div
+                    className="quines__card"
+                    key={info.descripcion}
+                    variants={fadeUp}
+                    whileHover={{
+                      y: -10,
+                      scale: 1.02,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="quines__card--icono">{info.icono}</div>
 
-            <div className="imagenes">
-              <div className="imagenes__primaria">
+                    <div className="quines__card--descripcion">
+                      <p>{info.descripcion}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="imagenes"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div className="imagenes__primaria" variants={fadeUp}>
                 <img src={junta} alt="Imagen Junta" />
-              </div>
-              <div className="imagenes__secundarias">
-                <img src={construccion} alt="Imagen Construcción" />
-                <img src={contador} alt="Imagen contador" />
-              </div>
-            </div>
+              </motion.div>
+
+              <motion.div className="imagenes__secundarias" variants={stagger}>
+                <motion.img
+                  src={construccion}
+                  alt="Imagen Construcción"
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.03 }}
+                />
+
+                <motion.img
+                  src={contador}
+                  alt="Imagen contador"
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.03 }}
+                />
+              </motion.div>
+            </motion.div>
           </div>
-          
-          {funciones.map((funcion) => (
-            <div className="cardsValores">
-              <div className="cardsValores__img">
-                <img src={funcion.img} alt="Imagen Vendedor" />
-              </div>
-              <div className="cardsValores__descripcion">
-                <h3>{funcion.title}</h3>
-                <p>{funcion.descripcion}</p>
-              </div>
-            </div>
-          ))}
+
+          <motion.div
+            className="cardsValoresContainer"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {funciones.map((funcion) => (
+              <motion.div
+                className="cardsValores"
+                key={funcion.title}
+                variants={fadeUp}
+                whileHover={{
+                  y: -12,
+                  scale: 1.02,
+                }}
+              >
+                <div className="cardsValores__img">
+                  <img src={funcion.img} alt="Imagen" />
+                </div>
+
+                <div className="cardsValores__descripcion">
+                  <h3>{funcion.title}</h3>
+                  <p>{funcion.descripcion}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </section>
 
-        <section className="nuestroObjetivos">
+        <motion.section
+          className="nuestroObjetivos"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <div className="contenedor">
             <div className="nuestroObjetivos__contenido">
-              <div className="nuestroObjetivos__contenido--descripcion">
+              <motion.div
+                className="nuestroObjetivos__contenido--descripcion"
+                variants={fadeUp}
+              >
                 <h2>Nuestros Objetivos</h2>
+
                 <p>
                   En Quafin, nos tomamos muy en serio el impulso de tus
                   proyectos. Por eso, te ofrecemos soluciones de financiamiento
@@ -207,29 +305,58 @@ const SobreQuafin = () => {
                   estabilidad financiera y asegurar tu patrimonio con contratos
                   claros.
                 </p>
-              </div>
-              <div className="nuestroObjetivos__contenido--img">
-                <img src={imgCierreNegocio} alt="Imagen Vendedor" />
-              </div>
+              </motion.div>
+
+              <motion.div
+                className="nuestroObjetivos__contenido--img"
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.03,
+                }}
+              >
+                <img src={imgCierreNegocio} alt="Imagen" />
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         <section className="objetivos">
           <div className="contenedor">
-            <CabeceraSection
-              titulo="NUESTROS VALORES"
-              subtitulo="Soluciones financieras a tu medida"
-              descripcion="Ofrecemos productos que se adaptan a las necesidades reales de las empresas y sobre todo de los trabajadores en México."
-            />
-            <div className="valores">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <CabeceraSection
+                titulo="NUESTROS VALORES"
+                subtitulo="Soluciones financieras a tu medida"
+                descripcion="Ofrecemos productos que se adaptan a las necesidades reales de las empresas y sobre todo de los trabajadores en México."
+              />
+            </motion.div>
+
+            <motion.div
+              className="valores"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {valores.map((valor) => (
-                <div className="valores__card">
+                <motion.div
+                  className="valores__card"
+                  key={valor.valor}
+                  variants={fadeUp}
+                  whileHover={{
+                    y: -10,
+                    scale: 1.03,
+                  }}
+                >
                   <h4>{valor.valor}</h4>
                   <p>{valor.descripcion}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

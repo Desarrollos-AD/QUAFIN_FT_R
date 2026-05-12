@@ -4,7 +4,13 @@
 .productos {
     display: flex;
     gap: 5rem;
-    margin: 6rem 5rem;
+    flex-direction: column;
+    margin: 5rem 2rem ;
+    
+    @include m.telefono-grande{
+        margin: 6rem 5rem;
+        flex-direction: row;
+    }
 
     .card {
         color: v.$gris;
