@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import "./Contacto.scss";
 import FondoHeader from "../../components/ui/FondoHeader/FondoHeader";
 import headerImg from "../../assets/img/contacto.jpg";
@@ -39,8 +39,22 @@ const iconoUbicacion = (
   </svg>
 );
 
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      delay,
+      ease: "easeOut",
+    },
+  }),
+};
 const Contacto = () => {
-
   return (
     <>
       <section className="contactoFondo">
@@ -53,67 +67,191 @@ const Contacto = () => {
             }
           />
 
-          <CabeceraSection
-            titulo="¿Tienes dudas?"
-            subtitulo="Estamos para ayudarte"
-            descripcion="Si prefieres una atención más inmediata, puedes comunicarte con nosotros a través de los siguientes medios:"
-          />
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0.1}
+          >
+            <CabeceraSection
+              titulo="¿Tienes dudas?"
+              subtitulo="Estamos para ayudarte"
+              descripcion="Si prefieres una atención más inmediata, puedes comunicarte con nosotros a través de los siguientes medios:"
+            />
+          </motion.div>
 
           <section className="contacto contenedor">
             <div className="cards">
-              <div className="cards__card">
-                <div className="cards__card--icono">{iconoTelefono}</div>
+              <motion.div
+                className="cards__card"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0.2}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+              >
+                <motion.div
+                  className="cards__card--icono"
+                  animate={{
+                    rotate: [0, -5, 5, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                  }}
+                >
+                  {iconoTelefono}
+                </motion.div>
+
                 <div className="cards__card--informacion">
-                  <h5>Visítanos en: </h5>
+                  <h5>Visítanos en:</h5>
+
                   <p>
                     Quafin, S.A.P.I de C.V., SOFOM, E.N.R Calz. Simon Bolívar
                     #645, Zaragoza, 91910 Veracruz, Ver.
                   </p>
                 </div>
-              </div>
-              <div className="cards__card">
-                <div className="cards__card--icono">{iconoUbicacion}</div>
+              </motion.div>
+
+              <motion.div
+                className="cards__card"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0.4}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+              >
+                <motion.div
+                  className="cards__card--icono"
+                  animate={{
+                    y: [0, -5, 0],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                  }}
+                >
+                  {iconoUbicacion}
+                </motion.div>
+
                 <div className="cards__card--informacion">
-                  <h5>Llámanos el nuestro número de atención: </h5>
+                  <h5>Llámanos al nuestro número de atención:</h5>
+
                   <p>+44 45 7200 8200</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             <div className="ubicacion">
-              <div className="ubicacion__mapa">
+              <motion.div
+                className="ubicacion__mapa"
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.9,
+                }}
+              >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19588.13399481863!2d-96.13688893295864!3d19.175160012797164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c34136a9c18491%3A0xd3d2024401bfe3f!2sCalz.%20Simon%20Bol%C3%ADvar%20629%2C%20Ignacio%20Zaragoza%2C%2091910%20Veracruz%2C%20Ver.!5e1!3m2!1ses-419!2smx!4v1778109841763!5m2!1ses-419!2smx"
                   width="600"
                   height="450"
-                  allowfullscreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa ubicación"
                 ></iframe>
-              </div>
-              <div className="ubicacion__formulario">
-                <h3>Formulario de contacto</h3>
-                <p>
+              </motion.div>
+
+              <motion.div
+                className="ubicacion__formulario"
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2,
+                }}
+              >
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  Formulario de contacto
+                </motion.h3>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
                   La información enviada a través de este formulario será
                   utilizada únicamente para atender tu solicitud de contacto.
                   Quafin no solicita información sensible ni datos financieros a
                   través de este medio.
-                </p>
+                </motion.p>
 
                 <FormContacto />
-              </div>
-              <div className="ubicacion__informacion">
-                <h5>Horario de atención</h5> <p>Lunes a viernes</p>
+              </motion.div>
+
+              <motion.div
+                className="ubicacion__informacion"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.3,
+                }}
+              >
+                <h5>Horario de atención</h5>
+
+                <p>Lunes a viernes</p>
+
                 <p>9:00 A. M. – 18:00 P. M.</p>
-                <Redes />
-              </div>
+
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                >
+                  <Redes />
+                </motion.div>
+              </motion.div>
             </div>
           </section>
         </main>
 
-        <PreguntasFrecuentes />
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+          }}
+        >
+          <PreguntasFrecuentes />
+        </motion.div>
 
-        <Confianza />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <Confianza />
+        </motion.div>
       </section>
     </>
   );
