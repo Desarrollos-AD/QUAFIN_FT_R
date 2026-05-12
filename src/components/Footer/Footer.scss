@@ -15,7 +15,6 @@ footer {
         justify-content: center;
         margin: auto;
         align-items: center;
-        color: v.$secundario-oscuro;
         margin: 40rem 0;
         overflow: hidden;
         max-width: 100%;
@@ -31,6 +30,7 @@ footer {
             text-align: center;
             overflow: hidden;
             font-weight: v.$bold;
+        color: v.$secundario-oscuro;
         }
     }
 
@@ -82,7 +82,6 @@ footer {
             gap: 2.5rem;
 
             p {
-                color: v.$blanco;
                 font-size: clamp(1.2rem, 1.5vw, 1.35rem);
                 text-align: center;
             }
