@@ -22,7 +22,7 @@ const NavBar = () => {
         </button>
 
         <div className={`navbar__links ${open ? "is-open" : ""}`}>
-          <a href="#productos">Productos Financieros</a>
+          <a href="/#productos">Productos Financieros</a>
           <Link to="/educacion-financiera">Educación Financiera</Link>
           <Link to="/sobre-quafin">Sobre Quafin</Link>
           <a href={UNE} target="_blank">

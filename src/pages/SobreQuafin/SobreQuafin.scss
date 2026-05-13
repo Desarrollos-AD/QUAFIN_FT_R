@@ -1,6 +1,15 @@
 @use "../../styles/base/variables" as v;
 @use "../../styles/abstracts/mixins" as m;
 
+#quienes,
+#objetivo,
+#valores,
+#mision-vision,
+#vision,
+#mision {
+    scroll-margin-top: 25rem;
+}
+
 .quienesSomos {
     display: flex;
     gap: 2.5rem;
@@ -183,5 +192,4 @@
     p {
         text-align: center;
     }
-
 }

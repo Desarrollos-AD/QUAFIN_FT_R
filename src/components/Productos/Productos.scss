@@ -1,6 +1,11 @@
 @use '../../styles/base/variables' as v;
 @use '../../styles/abstracts/mixins' as m;
 
+
+#productos {
+    scroll-margin-top: 10rem;
+}
+
 .productos {
     display: flex;
     gap: 5rem;

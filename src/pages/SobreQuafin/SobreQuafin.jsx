@@ -82,20 +82,24 @@ const quienesSomos = [
       "Nuestro compromiso es impulsar el crecimiento y la estabilidad financiera de nuestros clientes mediante productos financieros , brindando atención cercana, claridad en cada proceso y un acompañamiento profesional. ",
   },
 ];
+
 const funciones = [
   {
     title: "Nuestra Misión",
     descripcion:
       "Contribuir con productos adaptables, manteniendo un equilibrio entre el bienestar social y el crecimiento de las cadenas productivas en un entorno próspero.",
     img: imgMision,
+    url: 'mision',
   },
   {
     title: "Nuestra Visión",
     descripcion:
       "Ser la empresa promotora de cambio, distinguiéndonos por otorgar productos de manera ágil, eficiente y confiable, para el crecimiento y desarrollo de las cadenas productivas y sociales de nuestro país.",
     img: imgVision,
+    url: 'vision',
   },
 ];
+
 const valores = [
   {
     valor: "Confianza",
@@ -173,7 +177,7 @@ const SobreQuafin = () => {
         </motion.div>
 
         <section className="contenedor">
-          <div className="quienesSomos">
+          <div className="quienesSomos" id="quienes">
             <motion.div
               className="quines"
               variants={fadeUp}
@@ -259,6 +263,7 @@ const SobreQuafin = () => {
                 className="cardsValores"
                 key={funcion.title}
                 variants={fadeUp}
+                id={`${funcion.url}`}
                 whileHover={{
                   y: -12,
                   scale: 1.02,
@@ -278,6 +283,7 @@ const SobreQuafin = () => {
         </section>
 
         <motion.section
+          id="objetivo"
           className="nuestroObjetivos"
           variants={fadeUp}
           initial="hidden"
@@ -320,7 +326,7 @@ const SobreQuafin = () => {
           </div>
         </motion.section>
 
-        <section className="objetivos">
+        <section className="objetivos" id="valores">
           <div className="contenedor">
             <motion.div
               variants={fadeUp}

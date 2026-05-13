@@ -2,29 +2,74 @@ import React from "react";
 import logoPositivo from "../../assets/logoPositivo.png";
 import "./Footer.scss";
 import Redes from "../ui/Redes/Redes";
+import { Link } from "react-router-dom";
 
 const navbar = [
   {
     titulo: "Productos Financieros",
-    links: ["Crédito de nómina", "Crédito simple empresarial"],
+    links: [
+      {
+        texto: "Crédito de nómina",
+        url: "/#productos",
+      },
+      {
+        texto: "Crédito simple empresarial",
+        url: "/#productos",
+      },
+    ],
   },
   {
     titulo: "Sobre Quafin",
     links: [
-      "¿Quiénes somos?",
-      "Nuestra misión",
-      "Nuestra visión",
-      "Nuestro objetivo",
-      "Nuestros valores",
+      {
+        texto: "¿Quiénes somos?",
+        url: "/sobre-quafin#quienes",
+      },
+      {
+        texto: "Nuestra misión",
+        url: "/sobre-quafin#mision",
+      },
+      {
+        texto: "Nuestra visión",
+        url: "/sobre-quafin#vision",
+      },
+      {
+        texto: "Nuestro objetivo",
+        url: "/sobre-quafin#objetivo",
+      },
+      {
+        texto: "Nuestros valores",
+        url: "/sobre-quafin#valores",
+      },
     ],
   },
   {
     titulo: "Contacto",
-    links: ["Teléfono:", "152852255", "Correo:", "contacto@quafin.com.mx"],
+    links: [
+      {
+        texto: "Teléfono: 152852255",
+      },
+      {
+        texto: "Correo: contacto@quafin.com.mx",
+      },
+    ],
   },
   {
     titulo: "Formatos",
-    links: ["Formato Arco", "Términos y condiciones", "Educación Financiera"],
+    links: [
+      {
+        texto: "Formato Arco",
+        url: "/formato-arco",
+      },
+      {
+        texto: "Términos y condiciones",
+        url: "/terminos",
+      },
+      {
+        texto: "Educación Financiera",
+        url: "/educacion-financiera",
+      },
+    ],
   },
 ];
 
@@ -40,14 +85,16 @@ const Footer = () => {
           <div className="footer__navbar">
             <div className="footer__navbar--quafin">
               <div className="logo">
-                <img src={logoPositivo} alt="Logo Quafin positivo" />
+                <Link to="/">
+                  <img src={logoPositivo} alt="Logo Quafin positivo" />
+                </Link>
               </div>
               <p>
                 Quafin, S.A.P.I de C.V., SOFOM, E.N.R Calz. Simon Bolívar #645,
                 Zaragoza, 91910 Veracruz, Ver.
               </p>
 
-             <Redes/>
+              <Redes />
             </div>
             {navbar.map((section, index) => (
               <div className="footer__navbar--links" key={index}>
@@ -57,7 +104,7 @@ const Footer = () => {
 
                 {section.links.map((link, i) => (
                   <div className="footer__navbar--link" key={i}>
-                    <a href="#">{link}</a>
+                    <a href={link.url}>{link.texto}</a>
                   </div>
                 ))}
               </div>

@@ -17,22 +17,32 @@ footer {
         align-items: center;
         margin: 40rem 0;
         overflow: hidden;
-        max-width: 100%;
+        width: 92%;
 
         @include m.tablet-pequena {
             margin: 0;
-            width: 90%;
+            margin-left: 10rem;
+            width: 85%;
+        }
+        @include m.desktop-grande{
+            margin: 0;
+            width: 85%;
         }
 
         h5 {
-            font-size: 25rem;
+            font-size: clamp(7rem, 25vw, 20rem);
             letter-spacing: 1rem;
             text-align: center;
             overflow: hidden;
             font-weight: v.$bold;
-        color: v.$secundario-oscuro;
+            color: v.$secundario-oscuro;
+
+            @include m.tablet-pequena {
+                font-size: clamp(8rem, 30vw, 25rem);
+            }
         }
     }
+
 
     &__navbar {
         position: relative;

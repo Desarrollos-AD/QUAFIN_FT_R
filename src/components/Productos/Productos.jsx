@@ -16,7 +16,6 @@ const prod = [
     tasa: "Fija desde 36% anual",
     destino: "Libre (Para lo que necesites)",
     garantia: "Aval o garantía",
-    cobertura: "Estado de Veracruz",
     requisitos: [
       "Ser empleado de 18 a 65 años",
       "Mínimo 12 meses trabajando",
@@ -52,7 +51,7 @@ const prod = [
   },
   {
     tipoProducto: "Para empresas",
-    nombreProducto: "Crédito de simple",
+    nombreProducto: "Crédito simple empresarial",
     descripcion: "Capital para hacer crecer tu negocio.",
     montoMinimo: "100,000",
     montoMaximo: "2,000,000",
@@ -61,7 +60,6 @@ const prod = [
     tasa: "Fija desde 36% anual",
     destino: "Libre (Para lo que necesites)",
     garantia: "No se requiere",
-    cobertura: "Estado de Veracruz",
     requisitos: [
       "Empresa con mínimo 2 años de operación",
       "Ingreso mensual desde $200,000",
@@ -171,7 +169,6 @@ const Productos = () => {
                   ["Tasa de interés", producto.tasa],
                   ["Destino", producto.destino],
                   ["Aval o garantía", producto.garantia],
-                  ["Cobertura", producto.cobertura],
                 ].map(([label, value], i) => (
                   <motion.div
                     key={i}
