@@ -2,17 +2,19 @@ import React from "react";
 
 const EnviarEmail = async (formData) => {
   try {
-    const response = await fetch("/api/EnviarEmail.php.php", {
+    const response = await fetch("/api/EnviarEmail.php", {
       method: "POST",
-
+      
       headers: {
         "Content-Type": "application/json",
       },
-
+      
       body: JSON.stringify(formData),
     });
+    console.log(response);
 
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.error(error);

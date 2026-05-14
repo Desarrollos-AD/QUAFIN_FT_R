@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./NuestroEnfoque.scss";
 import Boton from "../ui/Boton/Boton";
-import operadora from "../../assets/img/img_operadora.jpg";
+import operadora from "../../assets/img/img_operadora.webp";
 import doctores from "../../assets/img/img_doctores.jpg";
 import obra from "../../assets/img/img_obra.jpg";
 import banco from "../../assets/img/banco.png";

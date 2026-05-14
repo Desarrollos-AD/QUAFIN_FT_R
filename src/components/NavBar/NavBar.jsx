@@ -13,7 +13,7 @@ const NavBar = () => {
       <nav className="navbar__nav">
         <div className="navbar__logo">
           <Link to="/">
-            <img src={logo} alt="Logo Quafin" />
+            <img width="50" height="50" loading="lazy"src={logo} alt="Logo Quafin" />
           </Link>
         </div>
 

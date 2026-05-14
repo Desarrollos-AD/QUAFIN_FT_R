@@ -57,7 +57,7 @@ const Confianza = () => {
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
               >
-                <img src={avatarHombre} alt="Imagen Cliente" />
+                <img width="50" height="50" loading="lazy"src={avatarHombre} alt="Imagen Cliente" />
               </motion.div>
 
               <motion.div
@@ -97,7 +97,7 @@ const Confianza = () => {
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
               >
-                <img src={avatarMujer} alt="Imagen atención a cliente" />
+                <img width="50" height="50" loading="lazy"src={avatarMujer} alt="Imagen atención a cliente" />
               </motion.div>
             </div>
             <div className="contenido">

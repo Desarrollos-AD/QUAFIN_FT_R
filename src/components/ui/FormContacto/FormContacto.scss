@@ -28,9 +28,4 @@
         display: flex;
         justify-content: flex-end;
     }
-
-    &__error {
-            font-size: clamp(1.2rem, 1.6vw, 1.4rem);
-                color: v.$alerta;
-    }
 }

@@ -2,14 +2,14 @@ import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import FondoHeader from "../../components/ui/FondoHeader/FondoHeader";
 import CabeceraSection from "../../components/ui/CabeceraSection/CabeceraSection";
-import headerImg from "../../assets/img/sobreQuafin.jpg";
+import headerImg from "../../assets/img/sobreQuafin.webp";
 import "./SobreQuafin.scss";
 
 import contador from "../../assets/img/contador.jpg";
-import construccion from "../../assets/img/construccion.jpg";
-import junta from "../../assets/img/junta.jpg";
-import imgVision from "../../assets/img/imgVision.jpg";
-import imgMision from "../../assets/img/imgMision.jpg";
+import construccion from "../../assets/img/construccion.webp";
+import junta from "../../assets/img/junta.webp";
+import imgVision from "../../assets/img/imgVision.webp";
+import imgMision from "../../assets/img/imgMision.webp";
 import imgCierreNegocio from "../../assets/img/cierreNegocio.jpg";
 import { motion } from "framer-motion";
 
@@ -277,7 +277,7 @@ const SobreQuafin = () => {
                 }}
               >
                 <div className="cardsValores__img">
-                  <img src={funcion.img} alt="Imagen" />
+                  <img width="50" height="50" loading="lazy"src={funcion.img} alt="Imagen" />
                 </div>
 
                 <div className="cardsValores__descripcion">
@@ -325,7 +325,7 @@ const SobreQuafin = () => {
               </div>
 
               <motion.div className="nuestroObjetivos__contenido--img">
-                <img src={imgCierreNegocio} alt="Imagen" />
+                <img width="50" height="50" loading="lazy"src={imgCierreNegocio} alt="Imagen" />
               </motion.div>
             </motion.div>
           </div>

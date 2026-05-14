@@ -92,7 +92,11 @@ const Footer = () => {
             <div className="footer__navbar--quafin">
               <div className="logo">
                 <Link to="/">
-                  <img src={logoPositivo} alt="Logo Quafin positivo" />
+                  <img
+                    loading="lazy"
+                    src={logoPositivo}
+                    alt="Logo Quafin positivo"
+                  />
                 </Link>
               </div>
               <p>

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Contacto.scss";
 import FondoHeader from "../../components/ui/FondoHeader/FondoHeader";
-import headerImg from "../../assets/img/contacto.jpg";
+import headerImg from "../../assets/img/contacto.webp";
 import CabeceraSection from "../../components/ui/CabeceraSection/CabeceraSection";
 import Confianza from "../../components/Confianza/Confianza";
 import Redes from "../../components/ui/Redes/Redes";
@@ -165,9 +165,7 @@ const Contacto = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1159.242549790086!2d-96.12715813037654!3d19.17517416557692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341340203d2dd%3A0xca6c51b000442656!2sCalz.%20Simon%20Bol%C3%ADvar%20645%2C%20Ignacio%20Zaragoza%2C%2091910%20Veracruz%2C%20Ver.!5e1!3m2!1ses-419!2smx!4v1778709720939!5m2!1ses-419!2smx"
                   width="600"
                   height="450"
-                  allowfullscreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </motion.div>
 

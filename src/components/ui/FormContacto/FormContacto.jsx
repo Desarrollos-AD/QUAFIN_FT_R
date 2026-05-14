@@ -104,9 +104,8 @@ const FormContacto = () => {
         setStatus("error");
       }
     } catch (error) {
-      console.error(error);
-
       setStatus("error");
+      console.log(error)
     }
   };
 
@@ -120,7 +119,6 @@ const FormContacto = () => {
   if (status === "success") {
     return (
       <div className="form-feedback form-feedback--success">
-        <div className="form-feedback__icon">✓</div>
         <h3>¡Mensaje enviado con éxito!</h3>
         <p>Nos pondremos en contacto contigo pronto.</p>
         <button className="btn__primario" onClick={handleReset}>
@@ -133,15 +131,16 @@ const FormContacto = () => {
   if (status === "error") {
     return (
       <div className="form-feedback form-feedback--error">
-        <div className="form-feedback__icon">✗</div>
         <h3>Ocurrió un error</h3>
         <p>
           No pudimos enviar tu mensaje. Intenta de nuevo o llámanos al{" "}
           <strong>+44 45 7200 8200</strong>.
         </p>
-        <button className="btn__primario" onClick={handleReset}>
-          Intentar de nuevo
-        </button>
+        <div className="btn">
+          <button className="btn__primario" onClick={handleReset}>
+            Intentar de nuevo
+          </button>
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Header.scss";
-import trabajador from "../../assets/img/img_trabajador.png";
+import trabajador from "../../assets/img/img_trabajador.webp";
 import NavBar from "../NavBar/NavBar";
 import Boton from "../ui/Boton/Boton";
 import WhatsApp from "../ui/WhatssApp/WhatssApp";
