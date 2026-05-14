@@ -51,20 +51,13 @@
 
         &__contenido {
             h2 {
-                margin: 2rem 0 0rem 0;
+                margin: 2rem 0 1rem 0;
                 text-align: left;
                 color: v.$negro;
             }
 
             &--monto {
                 margin: 2rem 0 -2rem 0;
-
-                h2 {
-                    font-size: clamp(2rem, 2.6vw, 2.4rem);
-                    color: v.$negro;
-                    text-align: left;
-                    margin: 1rem 0;
-                }
             }
         }
 

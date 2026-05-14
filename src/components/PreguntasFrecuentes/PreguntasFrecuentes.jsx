@@ -6,42 +6,42 @@ const preguntas = [
   {
     id: 1,
     numero: "01",
-    pregunta: "¿Quafin es un préstamo Quafinom?",
+    pregunta: "¿Qué es Quafin?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
   {
     id: 2,
     numero: "02",
-    pregunta: "¿Quiénes pueden solicitar préstamo Quafinom?",
+    pregunta: "¿Qué es una SOFOM, E.N.R.?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
   {
     id: 3,
     numero: "03",
-    pregunta: "¿Qué requisitos se necesitan?",
+    pregunta: "¿Qué es un préstamo Quafinom?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
   {
     id: 4,
     numero: "04",
-    pregunta: "¿Qué es Quafin?",
+    pregunta: "¿Quiénes pueden solicitar préstamo Quafinom?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
   {
     id: 5,
     numero: "05",
-    pregunta: "¿Qué es una SOFOM, E.N.R.?",
+    pregunta: "¿Quafin es un préstamo Quaficredit?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
   {
     id: 6,
     numero: "06",
-    pregunta: "¿Quafin es un préstamo Quaficredit?",
+    pregunta: "¿Quiénes pueden solicitar préstamo Quaficredit?",
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },

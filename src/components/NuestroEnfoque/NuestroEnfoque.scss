@@ -16,20 +16,6 @@
         flex-direction: row;
     }
 
-    h2,
-    h3 {
-        text-align: left;
-    }
-
-    h2 {
-        font-size: clamp(3rem, 4vw, 3.5rem);
-    }
-
-    h3 {
-        font-size: clamp(2rem, 3vw, 2.5rem);
-          font-weight: v.$bold;
-    }
-
     &__imagenes {
         display: flex;
         gap: 2.5rem;
@@ -61,6 +47,12 @@
 
         .btn {
             margin: 5rem 0 0 2rem;
+        }
+
+        h2 {
+            margin-top: 5rem;
+            text-align: left;
+            font-size: clamp(3rem, 4vw, 3.5rem);
         }
     }
 }

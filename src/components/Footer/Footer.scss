@@ -21,7 +21,7 @@ footer {
 
         @include m.tablet-pequena {
             margin: 0;
-            margin-left: 10rem;
+            margin-left: 5rem;
             width: 85%;
         }
 
@@ -36,10 +36,10 @@ footer {
             text-align: center;
             overflow: hidden;
             font-weight: v.$bold;
-            color: v.$secundario-oscuro;
+            color: #0b3763;
 
             @include m.tablet-pequena {
-                font-size: clamp(8rem, 30vw, 25rem);
+                font-size: clamp(8rem, 35vw, 30rem);
             }
         }
     }

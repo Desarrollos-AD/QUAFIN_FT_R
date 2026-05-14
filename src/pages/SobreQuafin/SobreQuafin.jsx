@@ -277,7 +277,7 @@ const SobreQuafin = () => {
                 }}
               >
                 <div className="cardsValores__img">
-                  <img width="50" height="50" loading="lazy"src={funcion.img} alt="Imagen" />
+                  <img loading="lazy"src={funcion.img} alt="Imagen" />
                 </div>
 
                 <div className="cardsValores__descripcion">
@@ -325,7 +325,7 @@ const SobreQuafin = () => {
               </div>
 
               <motion.div className="nuestroObjetivos__contenido--img">
-                <img width="50" height="50" loading="lazy"src={imgCierreNegocio} alt="Imagen" />
+                <img loading="lazy"src={imgCierreNegocio} alt="Imagen" />
               </motion.div>
             </motion.div>
           </div>

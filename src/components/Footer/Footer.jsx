@@ -65,11 +65,11 @@ const navbar = [
     links: [
       {
         texto: "Formato Arco",
-        url: "/formato-arco",
+        url: "Formato-Arco.pdf",
       },
       {
-        texto: "Términos y condiciones",
-        url: "/terminos",
+        texto: "Aviso de privacidad",
+        url: "Aviso-provacidad.pdf",
       },
       {
         texto: "Educación Financiera",
@@ -140,7 +140,7 @@ const Footer = () => {
               © Todos los derechos reservados. Prohibida la reproducción total o
               parcial del contenido de este sitio.
               <br />
-              <a href="#"> Términos y condiciones</a>
+              {/* <a href="#"> Términos y condiciones</a> */}
             </p>
           </div>
         </div>

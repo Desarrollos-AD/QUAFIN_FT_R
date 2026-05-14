@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import "./NuestroEnfoque.scss";
 import Boton from "../ui/Boton/Boton";
 import operadora from "../../assets/img/img_operadora.webp";
-import doctores from "../../assets/img/img_doctores.jpg";
-import obra from "../../assets/img/img_obra.jpg";
+import doctores from "../../assets/img/img_doctores.webp";
+import obra from "../../assets/img/img_obra.webp";
 import banco from "../../assets/img/banco.png";
 
 const fadeUp = {
@@ -56,7 +56,7 @@ const NuestroEnfoque = () => {
               productos financieros a nuestros clientes.
             </p>
 
-            <h3>Nuestra filosofía</h3>
+            <h2>Nuestra filosofía</h2>
             <p>
               En Quafin nuestra filosofia consiste en ofrecer condiciones reales
               y sostenibles. Buscamos relaciones duraderas con personas y
