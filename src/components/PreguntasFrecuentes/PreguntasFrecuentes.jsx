@@ -38,6 +38,13 @@ const preguntas = [
     descripcion:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
   },
+  {
+    id: 6,
+    numero: "06",
+    pregunta: "¿Quafin es un préstamo Quaficredit?",
+    descripcion:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,",
+  },
 ];
 
 const PreguntasFrecuentes = () => {
@@ -49,7 +56,7 @@ const PreguntasFrecuentes = () => {
     <section className="preguntasFrecuentes">
       <div className="contenedor">
         <h2>Preguntas Frecuentes</h2>
-        <p>
+        <p className="preguntasFrecuentes__subtitulo">
           En esta sección encontrarás respuestas a las preguntas más comunes
           sobre nuestras soluciones de financiamiento, procesos y servicios. Si
           necesitas más información, puedes contactar a nuestro equipo de

@@ -162,12 +162,12 @@ const Contacto = () => {
                 }}
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19588.13399481863!2d-96.13688893295864!3d19.175160012797164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c34136a9c18491%3A0xd3d2024401bfe3f!2sCalz.%20Simon%20Bol%C3%ADvar%20629%2C%20Ignacio%20Zaragoza%2C%2091910%20Veracruz%2C%20Ver.!5e1!3m2!1ses-419!2smx!4v1778109841763!5m2!1ses-419!2smx"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1159.242549790086!2d-96.12715813037654!3d19.17517416557692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341340203d2dd%3A0xca6c51b000442656!2sCalz.%20Simon%20Bol%C3%ADvar%20645%2C%20Ignacio%20Zaragoza%2C%2091910%20Veracruz%2C%20Ver.!5e1!3m2!1ses-419!2smx!4v1778709720939!5m2!1ses-419!2smx"
                   width="600"
                   height="450"
+                  allowfullscreen=""
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mapa ubicación"
+                  referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </motion.div>
 
@@ -219,13 +219,7 @@ const Contacto = () => {
 
                 <p>9:00 A. M. – 18:00 P. M.</p>
 
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                >
-                  <Redes />
-                </motion.div>
+                <Redes />
               </motion.div>
             </div>
           </section>

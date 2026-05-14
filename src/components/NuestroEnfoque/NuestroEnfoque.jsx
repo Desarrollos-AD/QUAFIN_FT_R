@@ -67,7 +67,7 @@ const NuestroEnfoque = () => {
             <div className="btn">
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Boton
-                  ruta="/sobre-nosotros"
+                  ruta="/sobre-quafin"
                   claseBtn="btn__secundario"
                   texto="¿Quiénes somos?"
                 />

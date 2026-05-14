@@ -60,7 +60,7 @@ const Header = () => {
             <motion.div className="header__botones" variants={fadeLeft}>
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Boton
-                  ruta="/servicios"
+                  ruta="/#productos"
                   claseBtn="btn__primario"
                   texto="Explora nuestros servicios"
                 />

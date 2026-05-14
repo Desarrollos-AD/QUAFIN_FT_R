@@ -1,3 +1,6 @@
+@use '../../../styles/abstracts/mixins' as mx;
+@use '../../../styles/base/variables' as v;
+
 .form {
 
     &__campo {
@@ -14,10 +17,20 @@
         textarea {
             height: 15rem;
         }
+
+        textarea,
+        select {
+            font-size: clamp(1.4rem, 1.8vw, 1.6rem);
+        }
     }
 
     &__btn {
         display: flex;
         justify-content: flex-end;
+    }
+
+    &__error {
+            font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+                color: v.$alerta;
     }
 }

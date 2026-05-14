@@ -4,7 +4,7 @@ import './Redes.scss';
 const Redes = () => {
   return (
     <div className="redes">
-      <a href="">
+      {/* <a href=""> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -19,9 +19,9 @@ const Redes = () => {
             stroke="none"
           />
         </svg>
-      </a>
+      {/* </a> */}
 
-      <a href="">
+      {/* <a href=""> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,8 +38,9 @@ const Redes = () => {
             stroke="none"
           />
         </svg>
-      </a>
-      <a href="#">
+      {/* // </a> */}
+
+      {/* <a href="#"> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           focusable="false"
@@ -55,8 +56,9 @@ const Redes = () => {
             class=""
           />
         </svg>
-      </a>
-      <a href="#">
+      {/* </a> */}
+
+      {/* <a href="#"> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -73,7 +75,7 @@ const Redes = () => {
             class=""
           />
         </svg>
-      </a>
+      {/* </a> */}
     </div>
   );
 }

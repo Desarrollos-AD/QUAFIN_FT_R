@@ -21,6 +21,7 @@
 
     .imagenes {
         flex: 1;
+        margin: 0 3rem; 
         @include m.grid(2, 1.5rem);
         align-items: end;
 
@@ -74,7 +75,7 @@
 
     @include m.telefono-mediano {
         flex-direction: row;
-        margin: 10rem 0;
+        margin: 10rem 3rem;
 
         &:nth-child(2) {
             flex-direction: row-reverse;
@@ -101,6 +102,7 @@
     &__contenido {
         display: flex;
         gap: 5rem;
+        margin: 3rem;
         flex-direction: column;
 
         @include m.telefono-mediano {

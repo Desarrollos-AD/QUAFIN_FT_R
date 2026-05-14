@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./FormContacto.scss";
+import EnviarEmail from "../../../api/services/EnviarEmail";
 
 const INITIAL_STATE = {
   nombre: "",
@@ -38,7 +39,6 @@ const validate = (fields) => {
 };
 
 const FormContacto = () => {
-  const formRef = useRef(null);
   const [fields, setFields] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -46,45 +46,37 @@ const FormContacto = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const fieldKey =
-      Object.keys({
-        from_name: "nombre",
-        from_email: "email",
-        phone: "telefono",
-        service: "servicio",
-        message: "mensaje",
-      }).find((k) => k === name) || name;
-    const stateKey =
-      {
-        from_name: "nombre",
-        from_email: "email",
-        phone: "telefono",
-        service: "servicio",
-        message: "mensaje",
-      }[name] || name;
-    setFields((prev) => ({ ...prev, [stateKey]: value }));
-    if (touched[stateKey]) {
-      const newErrors = validate({ ...fields, [stateKey]: value });
-      setErrors((prev) => ({ ...prev, [stateKey]: newErrors[stateKey] }));
+
+    setFields((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (touched[name]) {
+      const newErrors = validate({
+        ...fields,
+        [name]: value,
+      });
+
+      setErrors((prev) => ({
+        ...prev,
+        [name]: newErrors[name],
+      }));
     }
   };
 
   const handleBlur = (e) => {
-    const stateKey =
-      {
-        from_name: "nombre",
-        from_email: "email",
-        phone: "telefono",
-        service: "servicio",
-        message: "mensaje",
-      }[e.target.name] || e.target.name;
-    setTouched((prev) => ({ ...prev, [stateKey]: true }));
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
     const newErrors = validate(fields);
-    setErrors((prev) => ({ ...prev, [stateKey]: newErrors[stateKey] }));
+    setErrors((prev) => ({
+      ...prev,
+      [e.target.name]: newErrors[e.target.name],
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const allTouched = {
       nombre: true,
       email: true,
@@ -92,26 +84,37 @@ const FormContacto = () => {
       servicio: true,
       mensaje: true,
     };
+
     setTouched(allTouched);
+
     const validationErrors = validate(fields);
+
     setErrors(validationErrors);
+
     if (Object.values(validationErrors).some(Boolean)) return;
 
     setStatus("sending");
 
-    const response = await fetch("https://quafin.com/api/enviar.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await EnviarEmail(fields);
 
-    const data = await response.json();
+      if (response.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
 
-    if (data.ok) {
-      alert("Mensaje enviado");
+      setStatus("error");
     }
+  };
+
+  const handleReset = () => {
+    setStatus("idle");
+    setFields(INITIAL_STATE);
+    setErrors({});
+    setTouched({});
   };
 
   if (status === "success") {
@@ -143,15 +146,8 @@ const FormContacto = () => {
     );
   }
 
-  const handleReset = () => {
-    setStatus("idle");
-    setFields(INITIAL_STATE);
-    setErrors({});
-    setTouched({});
-  };
-
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="form" noValidate>
+    <form onSubmit={handleSubmit} className="form" noValidate>
       <div
         className={`form__campo ${errors.nombre && touched.nombre ? "form__campo--error" : ""}`}
       >
@@ -160,7 +156,7 @@ const FormContacto = () => {
         </label>
         <input
           id="nombre"
-          name="from_name"
+          name="nombre"
           className="form__campo--input"
           type="text"
           placeholder="Ingresa tu nombre con apellidos"
@@ -182,7 +178,7 @@ const FormContacto = () => {
         </label>
         <input
           id="email"
-          name="from_email"
+          name="email"
           className="form__campo--input"
           type="email"
           placeholder="ejemplo@empresa.com"
@@ -204,7 +200,7 @@ const FormContacto = () => {
         </label>
         <input
           id="telefono"
-          name="phone"
+          name="telefono"
           className="form__campo--input"
           type="tel"
           placeholder="229 000 0000"
@@ -226,7 +222,7 @@ const FormContacto = () => {
         </label>
         <select
           id="servicio"
-          name="service"
+          name="servicio"
           className="form__campo--input"
           value={fields.servicio}
           onChange={handleChange}
@@ -254,7 +250,7 @@ const FormContacto = () => {
         </label>
         <textarea
           id="mensaje"
-          name="message"
+          name="mensaje"
           className="form__campo--input"
           placeholder="Describe tu necesidad o duda con el mayor detalle posible..."
           rows={5}

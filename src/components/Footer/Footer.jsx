@@ -47,10 +47,16 @@ const navbar = [
     titulo: "Contacto",
     links: [
       {
-        texto: "Teléfono: 152852255",
+        texto: "Teléfono:",
       },
       {
-        texto: "Correo: contacto@quafin.com.mx",
+        texto: "152852255",
+      },
+      {
+        texto: "Correo:",
+      },
+      {
+        texto: "contacto@quafin.com.mx",
       },
     ],
   },
