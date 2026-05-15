@@ -15,7 +15,7 @@ const prod = [
     pago: "Semanal, quincenal o mensual",
     tasa: "Fija desde 36% anual",
     destino: "Libre (Para lo que necesites)",
-    garantia: "Aval o garantía",
+    garantia: "No se requiere",
     requisitos: [
       "Ser empleado de 18 a 65 años",
       "Mínimo 12 meses trabajando",
@@ -26,11 +26,7 @@ const prod = [
     importante:
       "La documentación deberá presentarse en físico al momento de solicitar el crédito.",
     svg: (
-      <svg
-        viewBox="0 0 60 60"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_281_803)">
           <path
             d="M53 33.894V25.295C53.63 24.505 54 23.509 54 22.44V13C54 10.794 52.206 9 50 9H42.572L38.715 2.443C37.829 0.936 36.205 0 34.477 0H19.524C17.795 0 16.171 0.936 15.285 2.443L11.428 9H4C1.794 9 0 10.794 0 13V22.44C0 23.509 0.37 24.505 1 25.295V45C1 47.206 2.794 49 5 49H32.332C33.71 55.282 39.311 60 46 60C53.72 60 60 53.72 60 46C60 40.832 57.177 36.319 53 33.894ZM17.01 3.457C17.538 2.559 18.501 2 19.524 2H34.477C35.499 2 36.462 2.558 36.991 3.457L40.252 9H37.932L35.558 4.965C35.201 4.357 34.539 3.979 33.833 3.979H33.831L20.098 3.999C19.386 3.999 18.724 4.383 18.37 4.996L16.048 9H13.749L17.01 3.457ZM35.611 9H18.36L20.1 5.999L33.833 5.978L35.611 8.999V9ZM2 13C2 11.897 2.897 11 4 11H50C51.103 11 52 11.897 52 13V22.44C52 23.629 51.193 24.661 50.038 24.95L32.889 29.237C32.549 27.953 31.389 27 29.999 27H23.999C22.61 27 21.45 27.953 21.11 29.237L3.962 24.95C2.807 24.661 2 23.629 2 22.44V13ZM31 30V32C31 32.552 30.552 33 30 33H24C23.448 33 23 32.552 23 32V30C23 29.449 23.448 29 24 29H30C30.552 29 31 29.449 31 30ZM5 47C3.897 47 3 46.103 3 45V26.727C3.157 26.785 3.312 26.849 3.478 26.89L21 31.27V31.999C21 33.653 22.346 34.999 24 34.999H30C31.654 34.999 33 33.653 33 31.999V31.27L50.522 26.89C50.688 26.849 50.842 26.785 51 26.727V32.939C49.445 32.341 47.763 32 46 32C38.28 32 32 38.28 32 46C32 46.338 32.027 46.668 32.051 47H5ZM46 58C39.383 58 34 52.617 34 46C34 39.383 39.383 34 46 34C52.617 34 58 39.383 58 46C58 52.617 52.617 58 46 58Z"
@@ -59,7 +55,7 @@ const prod = [
     pago: "Mensual",
     tasa: "Fija desde 36% anual",
     destino: "Libre (Para lo que necesites)",
-    garantia: "No se requiere",
+    garantia: "Aval o garantía",
     requisitos: [
       "Empresa con mínimo 2 años de operación",
       "Ingreso mensual desde $200,000",
@@ -70,11 +66,7 @@ const prod = [
     importante:
       "La documentación deberá presentarse en físico al momento de solicitar el crédito.",
     svg: (
-      <svg
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
           clipRule="evenodd"

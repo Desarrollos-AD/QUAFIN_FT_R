@@ -79,7 +79,7 @@ const quienesSomos = [
     ),
 
     descripcion:
-      "Nuestro compromiso es impulsar el crecimiento y la estabilidad financiera de nuestros clientes mediante productos financieros , brindando atención cercana, claridad en cada proceso y un acompañamiento profesional. ",
+      "Nuestro compromiso es impulsar el crecimiento y la estabilidad financiera de nuestros clientes mediante productos financieros, brindando atención cercana, claridad en cada proceso y un acompañamiento profesional. ",
   },
 ];
 
@@ -187,6 +187,10 @@ const SobreQuafin = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
+              {/* <div className="burbuja">
+                
+              </div> */}
+
               <h2>¿Quiénes somos?</h2>
 
               <p>

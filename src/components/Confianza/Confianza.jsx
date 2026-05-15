@@ -61,7 +61,7 @@ const Confianza = () => {
               </motion.div>
 
               <motion.div
-                className="burbuja"
+                className="burbuja__mensaje"
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -117,14 +117,14 @@ const Confianza = () => {
           </motion.div>
 
           <motion.div
-            className="confianza__cards--tipos"
-            variants={fadeUp}
-            whileHover={{ y: -10 }}
+          className="confianza__cards--tipos"
+          variants={fadeUp}
+          whileHover={{ y: -10 }}
           >
             <motion.div
-              className="img"
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
+            className="img"
+            initial={{ scale: 0.9 }}
+            whileInView={{ scale: 1 }}
             />
             <div className="contenido">
               <h4>Tipos de atención disponibles</h4>
