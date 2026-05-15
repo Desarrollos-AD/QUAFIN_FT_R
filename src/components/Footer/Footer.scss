@@ -21,10 +21,11 @@ footer {
 
         @include m.tablet-pequena {
             margin: 0;
-            margin-left: 10rem;
+            margin-left: 5rem;
             width: 85%;
         }
-        @include m.desktop-grande{
+
+        @include m.desktop-grande {
             margin: 0;
             width: 85%;
         }
@@ -35,10 +36,10 @@ footer {
             text-align: center;
             overflow: hidden;
             font-weight: v.$bold;
-            color: v.$secundario-oscuro;
+            color: #0b3763;
 
             @include m.tablet-pequena {
-                font-size: clamp(8rem, 30vw, 25rem);
+                font-size: clamp(8rem, 35vw, 30rem);
             }
         }
     }
@@ -60,27 +61,31 @@ footer {
 
             @include m.tablet-pequena {
                 margin: 10rem auto;
+                display: block;
+
             }
+
+
         }
 
         &--title {
-            margin: 0rem 0 3rem 0;
-
+            margin: 0rem 0 1rem 0;
+            
             @include m.tablet-pequena {
-                margin: 0rem 0 1rem 0;
+                margin: 0rem 0 3rem 0;
             }
 
             a {
-                font-size: clamp(1.8rem, 2.2vw, 2rem);
+                font-size: clamp(1.6rem, 2vw, 1.8rem);
                 font-weight: v.$bold;
             }
         }
 
         &--link {
-            margin: 0 auto;
+            margin: .5rem auto;
 
             a {
-                font-size: clamp(1.4rem, 1.8vw, 1.6rem);
+                font-size: clamp(1.3rem, 1.7vw, 1.5rem);
             }
         }
 

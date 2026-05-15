@@ -7,7 +7,7 @@ $anchos2: 7rem, 2rem, 6rem, 6rem, 2rem, 4rem, 5rem, 2rem, 5rem, 7rem;
 .confianza {
     background-color: v.$blanco;
     border-radius: 8rem 8rem 0 0;
-    margin: 5rem 0 0 0;
+    padding: 7rem 0 0 0;
 
     &__cards {
         margin: 5rem 2.5rem;
@@ -71,7 +71,7 @@ $anchos2: 7rem, 2rem, 6rem, 6rem, 2rem, 4rem, 5rem, 2rem, 5rem, 7rem;
                 }
             }
 
-            .burbuja {
+            .burbuja__mensaje {
                 margin: 2rem 0;
                 height: 30rem;
                 background-color: v.$blanco;

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.scss";
 import logo from "../../assets/logo.svg";
 import { useState } from "react";
@@ -7,13 +7,23 @@ import UNE from "/public/UNE.pdf";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const handleClick = () =>{
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }
 
   return (
     <div className="navbar">
       <nav className="navbar__nav">
         <div className="navbar__logo">
-          <Link to="/">
-            <img src={logo} alt="Logo Quafin" />
+          <Link to="/" onClick={handleClick}>
+            <img  loading="lazy"src={logo} alt="Logo Quafin" />
           </Link>
         </div>
 

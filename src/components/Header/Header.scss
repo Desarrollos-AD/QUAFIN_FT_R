@@ -2,7 +2,7 @@
 @use '../../styles/base/variables' as v;
 
 .header__fondo {
-    background-image: url("../../assets/img/img_header.jpg");
+    background-image: url("../../assets/img/img_header.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.288);
+        background: rgba(0, 0, 0, 0.45);
         z-index: 0;
     }
 }
@@ -56,6 +56,11 @@
         @include mx.telefono-pequeno {
             flex-direction: row;
         }
+
+        @include mx.tablet-pequena {
+            justify-content: left;
+
+        }
     }
 
     &__izquierda {
@@ -68,6 +73,10 @@
             @include mx.telefono-pequeno {
                 text-align: left;
             }
+        }
+
+        h4 {
+            text-align: justify;
         }
     }
 

@@ -5,12 +5,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
+    flex-direction: column;
+    margin: 4rem 2rem 0rem;
+
+    @include m.telefono-grande {
+        flex-direction: row;
+    }
+
 
     &__institucion {
         display: flex;
+        flex-direction: column;
+        white-space: wrap;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        color: v.$negro;
+
+        @include m.telefono-grande {
+            flex-direction: row;
+        }
 
         &--logo {
             height: 15rem;
@@ -24,11 +38,19 @@
                 object-fit: contain;
             }
         }
+
+        &--descripcion {
+            p {
+                color: v.$negro;
+                font-size: clamp(1.2rem, 1.4vw, 1.3rem);
+            }
+        }
+
     }
 }
 
 .separador {
-    background-color: v.$secundario;
+    background-color: v.$primario;
     height: 2rem;
     width: 100%;
     margin: 5rem 0 10rem 0;

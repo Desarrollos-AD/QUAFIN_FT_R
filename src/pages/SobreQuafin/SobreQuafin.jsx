@@ -2,14 +2,14 @@ import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import FondoHeader from "../../components/ui/FondoHeader/FondoHeader";
 import CabeceraSection from "../../components/ui/CabeceraSection/CabeceraSection";
-import headerImg from "../../assets/img/sobreQuafin.jpg";
+import headerImg from "../../assets/img/sobreQuafin.webp";
 import "./SobreQuafin.scss";
 
 import contador from "../../assets/img/contador.jpg";
-import construccion from "../../assets/img/construccion.jpg";
-import junta from "../../assets/img/junta.jpg";
-import imgVision from "../../assets/img/imgVision.jpg";
-import imgMision from "../../assets/img/imgMision.jpg";
+import construccion from "../../assets/img/construccion.webp";
+import junta from "../../assets/img/junta.webp";
+import imgVision from "../../assets/img/imgVision.webp";
+import imgMision from "../../assets/img/imgMision.webp";
 import imgCierreNegocio from "../../assets/img/cierreNegocio.jpg";
 import { motion } from "framer-motion";
 
@@ -79,7 +79,7 @@ const quienesSomos = [
     ),
 
     descripcion:
-      "Nuestro compromiso es impulsar el crecimiento y la estabilidad financiera de nuestros clientes mediante productos financieros , brindando atención cercana, claridad en cada proceso y un acompañamiento profesional. ",
+      "Nuestro compromiso es impulsar el crecimiento y la estabilidad financiera de nuestros clientes mediante productos financieros, brindando atención cercana, claridad en cada proceso y un acompañamiento profesional. ",
   },
 ];
 
@@ -89,14 +89,14 @@ const funciones = [
     descripcion:
       "Contribuir con productos adaptables, manteniendo un equilibrio entre el bienestar social y el crecimiento de las cadenas productivas en un entorno próspero.",
     img: imgMision,
-    url: 'mision',
+    url: "mision",
   },
   {
     title: "Nuestra Visión",
     descripcion:
       "Ser la empresa promotora de cambio, distinguiéndonos por otorgar productos de manera ágil, eficiente y confiable, para el crecimiento y desarrollo de las cadenas productivas y sociales de nuestro país.",
     img: imgVision,
-    url: 'vision',
+    url: "vision",
   },
 ];
 
@@ -161,8 +161,10 @@ const SobreQuafin = () => {
         <FondoHeader
           imgFondo={headerImg}
           titulo={"Sobre Quafin"}
-          subtitulo={"En Quafin ofrecemos servicios financieros orientados..."}
-          ruta={"/sobre-Quafin"}
+          subtitulo={
+            "En Quafin ofrecemos servicios financieros orientados a impulsar el crecimiento de personas y empresas, incluyendo créditos de nómina y financiamiento empresarial, siempre bajo principios de responsabilidad, transparencia y disciplina financiera."
+          }
+          ruta={"/contacto"}
           claseBtn={"btn__primario"}
           texto={"Contáctenos"}
         />
@@ -185,6 +187,10 @@ const SobreQuafin = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
+              {/* <div className="burbuja">
+                
+              </div> */}
+
               <h2>¿Quiénes somos?</h2>
 
               <p>
@@ -230,7 +236,12 @@ const SobreQuafin = () => {
               viewport={{ once: true }}
             >
               <motion.div className="imagenes__primaria" variants={fadeUp}>
-                <img src={junta} alt="Imagen Junta" />
+                <motion.img
+                  src={junta}
+                  alt="Imagen Junta"
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.03 }}
+                />
               </motion.div>
 
               <motion.div className="imagenes__secundarias" variants={stagger}>
@@ -252,7 +263,7 @@ const SobreQuafin = () => {
           </div>
 
           <motion.div
-            className="cardsValoresContainer"
+            className=""
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -270,7 +281,7 @@ const SobreQuafin = () => {
                 }}
               >
                 <div className="cardsValores__img">
-                  <img src={funcion.img} alt="Imagen" />
+                  <img loading="lazy"src={funcion.img} alt="Imagen" />
                 </div>
 
                 <div className="cardsValores__descripcion">
@@ -291,11 +302,15 @@ const SobreQuafin = () => {
           viewport={{ once: true }}
         >
           <div className="contenedor">
-            <div className="nuestroObjetivos__contenido">
-              <motion.div
-                className="nuestroObjetivos__contenido--descripcion"
-                variants={fadeUp}
-              >
+            <motion.div
+              className="nuestroObjetivos__contenido"
+              variants={fadeUp}
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+            >
+              <div className="nuestroObjetivos__contenido--descripcion">
                 <h2>Nuestros Objetivos</h2>
 
                 <p>
@@ -311,18 +326,12 @@ const SobreQuafin = () => {
                   estabilidad financiera y asegurar tu patrimonio con contratos
                   claros.
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="nuestroObjetivos__contenido--img"
-                variants={fadeUp}
-                whileHover={{
-                  scale: 1.03,
-                }}
-              >
-                <img src={imgCierreNegocio} alt="Imagen" />
+              <motion.div className="nuestroObjetivos__contenido--img">
+                <img loading="lazy"src={imgCierreNegocio} alt="Imagen" />
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 

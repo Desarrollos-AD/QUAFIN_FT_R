@@ -9,17 +9,27 @@ import { motion } from "framer-motion";
 
 import conducef from "../../assets/img/conducef.png";
 import cnbv from "../../assets/img/cnbv.svg";
+import buro from "../../assets/img/buro.jpg";
+import { a } from "framer-motion/client";
 
 const instituciones = [
   {
+    url: "https://www.gob.mx/cnbv",
     icono: cnbv,
     descripcion:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Los productos financieros de Quafin están sujetos a evaluación y aprobación. Quafin, S.A. de C.V., SOFOM, E.N.R., no requiere autorización de la SHCP para operar y está sujeta a supervisión de la CNBV conforme al artículo 56 de la LGOAAC.",
   },
   {
+    url: "https://www.condusef.gob.mx/",
     icono: conducef,
     descripcion:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Consulta nuestra información institucional en SIPRES CONDUSEF. Quafin no solicita pagos anticipados, acceso a dispositivos ni información confidencial por medios no oficiales. Toda comunicación se realiza únicamente a través de canales autorizados.",
+  },
+  {
+    url: "https://www.buro.gob.mx/",
+    icono: buro,
+    descripcion:
+      "Consulta la información de Quafin en el Buró de Entidades Financieras de CONDUSEF, donde podrás conocer información relacionada con nuestros productos, transparencia y desempeño institucional.",
   },
 ];
 
@@ -62,7 +72,8 @@ const Inicio = () => {
             viewport={{ once: true, amount: 0.2 }}
           >
             {instituciones.map((institucion, index) => (
-              <motion.div
+              <motion.a
+                href={institucion.url}
                 className="instituciones__institucion"
                 key={index}
                 variants={fadeUp}
@@ -81,24 +92,12 @@ const Inicio = () => {
                     scale: 1.08,
                   }}
                 >
-                  <img
-                    src={institucion.icono}
-                    alt={`Icono ${institucion.icono}`}
-                  />
+                  <img src={institucion.icono} alt="" />
                 </motion.div>
-
-                <motion.div
-                  className="instituciones__institucion--descripcion"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{
-                    delay: index * 0.2,
-                    duration: 0.6,
-                  }}
-                >
-                  {institucion.descripcion}
-                </motion.div>
-              </motion.div>
+                <div className="instituciones__institucion--descripcion">
+                  <p>{institucion.descripcion}</p>
+                </div>
+              </motion.a>
             ))}
           </motion.div>
         </section>
@@ -120,7 +119,6 @@ const Inicio = () => {
           viewport={{ once: true }}
           style={{ originX: 0 }}
         ></motion.div>
-
 
         <Productos />
       </main>

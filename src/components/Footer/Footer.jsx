@@ -47,10 +47,16 @@ const navbar = [
     titulo: "Contacto",
     links: [
       {
-        texto: "Teléfono: 152852255",
+        texto: "Teléfono:",
       },
       {
-        texto: "Correo: contacto@quafin.com.mx",
+        texto: "152852255",
+      },
+      {
+        texto: "Correo:",
+      },
+      {
+        texto: "contacto@quafin.com.mx",
       },
     ],
   },
@@ -59,11 +65,11 @@ const navbar = [
     links: [
       {
         texto: "Formato Arco",
-        url: "/formato-arco",
+        url: "Formato-Arco.pdf",
       },
       {
-        texto: "Términos y condiciones",
-        url: "/terminos",
+        texto: "Aviso de privacidad",
+        url: "Aviso-provacidad.pdf",
       },
       {
         texto: "Educación Financiera",
@@ -86,7 +92,11 @@ const Footer = () => {
             <div className="footer__navbar--quafin">
               <div className="logo">
                 <Link to="/">
-                  <img src={logoPositivo} alt="Logo Quafin positivo" />
+                  <img
+                    loading="lazy"
+                    src={logoPositivo}
+                    alt="Logo Quafin positivo"
+                  />
                 </Link>
               </div>
               <p>
@@ -130,7 +140,7 @@ const Footer = () => {
               © Todos los derechos reservados. Prohibida la reproducción total o
               parcial del contenido de este sitio.
               <br />
-              <a href="#"> Términos y condiciones</a>
+              {/* <a href="#"> Términos y condiciones</a> */}
             </p>
           </div>
         </div>

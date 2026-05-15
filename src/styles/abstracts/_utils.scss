@@ -13,14 +13,6 @@
     overflow: hidden;
 }
 
-.error {
-    background-color: v.$alerta;
-    color: v.$blanco;
-    padding: 1rem;
-    border-radius: .5rem;
-    margin: -3rem 0 1rem 0 !important;
-}
-
 .icono {
     height: 5rem;
     width: 5rem;
@@ -50,20 +42,23 @@
 }
 
 .separadorLinea {
-   
 
     &__positivo {
         background-color: v.$blanco;
         margin: 2.5rem 0;
-            width: 100%;
-            height: 1px;
+        width: 100%;
+        height: 1px;
+        width: 100%;
+        height: 1px;
     }
 
     &__negativo {
         background-color: v.$negro;
         margin: 2.5rem 0;
-            width: 100%;
-            height: 1px;
+        width: 100%;
+        height: 1px;
+        width: 100%;
+        height: 1px;
     }
 }
 
@@ -79,5 +74,66 @@
 
     &__mensaje {
         font-size: clamp(1.3rem, 1.5vw, 1.4rem);
+    }
+}
+
+// .burbuja {
+//     position: relative;
+//     width: 30rem;
+//     z-index: -1;
+//     height:30rem;
+//     border-radius: 50%;
+
+//     background:
+//         radial-gradient(circle at 30% 30%,
+//             rgba(255, 255, 255, 0.35),
+//             rgba(255, 255, 255, 0.05) 30%,
+//             rgba(38, 103, 255, 0.18) 70%,
+//             rgba(38, 103, 255, 0.05) 100%);
+
+//     backdrop-filter: blur(20px);
+//     -webkit-backdrop-filter: blur(20px);
+
+//     border: 1px solid rgb(255, 255, 255);
+
+//     box-shadow:
+//         0 0 0px rgba(38, 103, 255, 0.473),
+//         inset 0 0 0px rgba(255, 255, 255, 0.12),
+//         0 0px 0px rgba(0, 0, 0, 0.18);
+
+//     position: relative;
+//     overflow: hidden;
+
+//     animation: flotar 8s ease-in-out infinite;
+// }
+
+.form-feedback {
+    padding: 1rem 2rem;
+
+    h3 {
+        color: v.$blanco;
+    }
+
+    p {
+        color: v.$blanco;
+        margin-bottom: 2rem;
+    }
+
+    &--error {
+        background-color: v.$alerta;
+        border-radius: v.$b_radius;
+        margin-top: 2.5rem;
+    }
+
+    &--success {
+        background-color: v.$exito;
+        border-radius: v.$b_radius;
+        margin-top: 2.5rem;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: end;
+
     }
 }
